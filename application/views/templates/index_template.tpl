@@ -11,9 +11,9 @@
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between">
       <a class="navbar-brand" href="index.php">
-        <img src="{$APPPATH}/img/img.jpg" style="width:40px;" alt="Logo">
+        <img src="{$this->config->base_url()}img/img.jpg" style="width:40px;" alt="Logo">
               </a>
-      <ul <!-- {$hidden} --> class="navbar-nav mr-auto">
+      <ul  {$hidden} class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="blog.php">Post a new message</a>
         </li>
