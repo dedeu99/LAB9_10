@@ -113,7 +113,14 @@
             <br>
             <a>
               <span class="rounded-circle">
-                <img src="../img/user{$blog.user_id}.jpg" style="width:40px;" alt="User Image">
+                <img 
+                <?php
+                  if( file_exists("img/user".$blog.user_id."jpg" ))
+                  echo 'src="../img/user{$blog.user_id}"';
+                  else
+                  echo 'src="../img/user" ';
+                ?>
+                style="width:40px;" alt="User Image">
               </span>
             <p>{$blog.name}</p>
           </a>
