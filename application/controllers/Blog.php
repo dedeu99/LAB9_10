@@ -13,7 +13,7 @@
 		{
 			$data['hidden'] = 'hidden';
 			$data['hidden2'] = '';
-			$data['USERNAME'] = '';
+			$data['USERNAME'] = '';	
 			$data['USER_ID'] = '';
 			
 		    
