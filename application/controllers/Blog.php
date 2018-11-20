@@ -23,7 +23,7 @@
 		    $data['link2']=site_url()."/blog/login";
 		    $data['link3']=site_url()."/blog/register";*/
 		   
-		    $this->smarty->view('application/views/templates/index_template.tpl', $data);		
+		    $this->smarty->view('application/views/templates/index_template.tpX', $data);		
 		}
 	}
 ?> 
