@@ -13,20 +13,20 @@
       <a class="navbar-brand" href="index.php">
         <img src="img/img.jpg" style="width:40px;" alt="Logo">
               </a>
-      <ul {hidden} class="navbar-nav mr-auto">
+      <ul <!-- {$hidden} --> class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="blog.php">Post a new message</a>
         </li>
       </ul>
 
 
-      <div class="dropdown" {hidden}>
+      <div class="dropdown" {$hidden}>
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
 
               <span class="rounded-circle">
                 <img src="img/user{USER_ID}.jpg" style="width:40px;" alt="User Image">
               </span>
-    {USERNAME}
+    {$USERNAME}
         </button>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item" href="#">Profile</a>
@@ -34,7 +34,7 @@
           <a class="dropdown-item" href="logout_action.php">Log Out</a>
         </div>
       </div> 
-      <ul class="navbar-nav" {hidden2}>
+      <ul class="navbar-nav" {$hidden2}>
         <li class="nav-item">
           <a class="nav-link" href="login.php">Login</a>
         </li>
@@ -112,7 +112,7 @@
             <br>
             <a>
               <span class="rounded-circle">
-                <img src="img/user{USERID}.jpg" style="width:40px;" alt="User Image">
+                <img src="img/user{$blog.user_id}.jpg" style="width:40px;" alt="User Image">
               </span>
             <p>{$blog.name}</p>
           </a>
@@ -123,7 +123,7 @@
           </div>
           <div class="col-sm-9">
             <div {if $session_id!=0 and $session_id==$blog.user_id}  {else} hidden {/if} class="row justify-content-sm-end">
-              <a href="blog.php?POST_ID={MICROID}"><button  class="btn btn-secondary">
+              <a href="blog.php?POST_ID={$blog_id}"><button  class="btn btn-secondary">
                 Update
               </button></a>
             </div>
