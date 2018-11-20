@@ -117,9 +117,9 @@
             <p>{$blog.name}</p>
           </a>
             <p>Created:</p>
-            <p>{blog.created_at}</p>
+            <p>{$blog.created_at}</p>
             <p>Updated:</p>
-            <p>{blog.updated_at}</p>
+            <p>{$blog.updated_at}</p>
           </div>
           <div class="col-sm-9">
             <div {if $session_id!=0 and $session_id==$blog.user_id}  {else} hidden {/if} class="row justify-content-sm-end">
