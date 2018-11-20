@@ -12,7 +12,7 @@
 
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between">
       <a class="navbar-brand" href="index.php">
-        <img src="../../img/img.jpg" style="width:40px;" alt="Logo">
+        <img src="../img/img.jpg" style="width:40px;" alt="Logo">
               </a>
       <ul  {$hidden} class="navbar-nav mr-auto">
         <li class="nav-item">
@@ -25,7 +25,7 @@
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
 
               <span class="rounded-circle">
-                <img src="img/user{$USER_ID}.jpg" style="width:40px;" alt="User Image">
+                <img src="../img/user{$USER_ID}.jpg" style="width:40px;" alt="User Image">
               </span>
     {$USERNAME}
         </button>
@@ -60,13 +60,13 @@
 
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block w-100" src="img/slide1.svg?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
+                <img class="d-block w-100" src="../img/slide1.svg?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="img/slide2.svg?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
+                <img class="d-block w-100" src="../img/slide2.svg?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="img/slide3.svg?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+                <img class="d-block w-100" src="../img/slide3.svg?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" data-slide="prev">
@@ -113,7 +113,7 @@
             <br>
             <a>
               <span class="rounded-circle">
-                <img src="img/user{$blog.user_id}.jpg" style="width:40px;" alt="User Image">
+                <img src="../img/user{$blog.user_id}.jpg" style="width:40px;" alt="User Image">
               </span>
             <p>{$blog.name}</p>
           </a>
