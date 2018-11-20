@@ -9,6 +9,7 @@
   </head>
   
   <body>
+    <?php echo($this->config->base_url()); ?>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between">
       <a class="navbar-brand" href="index.php">
         <img src="{$this->config->base_url()}img/img.jpg" style="width:40px;" alt="Logo">
