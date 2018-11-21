@@ -6,6 +6,7 @@
 		{
 			parent::__construct();
 			$this->load->model('blog_model');
+			
 			$this->load->helper('url_helper');
 			$this->load->library('session');
 		}

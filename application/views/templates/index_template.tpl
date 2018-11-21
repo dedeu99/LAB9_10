@@ -47,7 +47,7 @@
     </nav>
  
     <br>
-    "../img/user{$blog.user_id}.jpg"
+    
     <div class="container">
       <div class="row justify-content-sm-center">
         <div class="col-sm-9">
@@ -108,13 +108,14 @@
 
 
         {foreach $blogs as $blog}
+        "../img/user{$blog.user_id}.jpg"
         <div class="row" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
           <div class="col-sm-3 text-center"  >
             <br>
             <a>
               <span class="rounded-circle">
                 <img
-                
+
                 {if file_exists ( "../img/user{$blog.user_id}.jpg" )}
                   src="../img/user{$blog.user_id}.jpg"
                 {else} 
@@ -132,11 +133,13 @@
             <p>{$blog.updated_at}</p>
           </div>
           <div class="col-sm-9">
-            <div {if $session_id!=0 and $session_id==$blog.user_id}  {else} hidden {/if} class="row justify-content-sm-end">
-              <a href="blog.php?POST_ID={$blog_id}"><button  class="btn btn-secondary">
+            {if $session_id!=0 and $session_id==$blog.user_id}  
+            <div  class="row justify-content-sm-end">
+              <a href="blog.php?POST_ID={$blog.id}"><button  class="btn btn-secondary">
                 Update
               </button></a>
             </div>
+            {else}  {/if}
             <div class="row align-items-center">
               <p>{$blog.content}</p>
             </div>
