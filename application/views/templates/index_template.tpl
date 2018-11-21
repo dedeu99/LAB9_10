@@ -110,7 +110,7 @@
         {foreach $blogs as $blog}
         {$smarty.current_dir}--{$smarty.template}//
 {if file_exists("../img/user$blog.user_id.jpg")}
-<a class="dropdown-item" href="#">{base_name()}</a>
+<a class="dropdown-item" href="#">asdasdasd</a>
         <div class="row" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
           <div class="col-sm-3 text-center"  >
             <br>
