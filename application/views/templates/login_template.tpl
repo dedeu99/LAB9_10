@@ -10,7 +10,7 @@
   
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between">
-      <a class="navbar-brand" href="../">
+      <a class="navbar-brand" href="/">
         <img src="../../img/img.jpg" style="width:40px;" alt="Logo">
       </a> 
       <ul class="navbar-nav" {$hidden2}>
