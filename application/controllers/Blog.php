@@ -6,7 +6,7 @@
 		{
 			parent::__construct();
 			$this->load->model('blog_model');
-			
+
 			$this->load->helper('url_helper');
 			$this->load->library('session');
 		}
@@ -16,8 +16,6 @@
 			$data['hidden2'] = '';
 			$data['USERNAME'] = '';	
 			$data['USER_ID'] = '';
-			
-		    
 		    $data['blogs'] = $this->blog_model->get_posts();
 
 		    /*$data['link1']=site_url("blog/index");
@@ -25,6 +23,17 @@
 		    $data['link3']=site_url()."/blog/register";*/
 		   
 		    $this->smarty->view('application/views/templates/index_template.tpl', $data);		
+		}
+		public function index()
+		{
+			
+		   
+		    $this->smarty->view('application/views/templates/register_template.tpl');		
+		}
+		public function index()
+		{
+			
+		    $this->smarty->view('application/views/templates/login_template.tpl');		
 		}
 	}
 ?> 
