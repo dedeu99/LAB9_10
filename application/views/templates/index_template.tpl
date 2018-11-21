@@ -109,7 +109,7 @@
 
         {foreach $blogs as $blog}
         "../img/user{$blog.user_id}.jpg"
-        {dirname(FCPATH)."}
+        {dirname(FCPATH).""}
         ----
         {file_exists ( "../img/user{$blog.user_id}.jpg" )}
         ----
