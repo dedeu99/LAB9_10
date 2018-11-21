@@ -111,7 +111,7 @@ value="IT WORKED"}
         {foreach $blogs as $blog}
         {$imagepath}
 {assign var="imagepath" 
-value="img/user{$blog.user_id}.jpg"}
+value="../img/user{$blog.user_id}.jpg"}
        {if file_exists($imagepath)}
           {$success}
         {/if}
@@ -125,13 +125,11 @@ value="../{$imagepath}"}
                 <img
 
                 
-{assign var="imagepath" 
-value="../img/user$blog.user_id.jpg"}
-{if file_exists($imagepath)} 
+{if file_exists("../img/user{$blog.user_id}.jpg")} 
                 
-                  src=$imagepath
+                  src="../img/user{$blog.user_id}.jpg"
                 {else} 
-                  src="../img/user" 
+                  src="../img/user.jpg" 
                 {/if}
 
 
