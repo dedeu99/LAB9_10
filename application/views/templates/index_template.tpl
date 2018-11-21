@@ -107,7 +107,9 @@
         </div>
 
 
-        <?php echo('asd');?>
+        {foreach $blogs as $blog}
+
+        <?php echo('asd'); ?>
         <div class="row" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
           <div class="col-sm-3 text-center"  >
             <br>
