@@ -24,13 +24,13 @@
 		   
 		    $this->smarty->view('application/views/templates/index_template.tpl', $data);		
 		}
-		public function index()
+		public function register()
 		{
 			
 		   
 		    $this->smarty->view('application/views/templates/register_template.tpl');		
 		}
-		public function index()
+		public function login()
 		{
 			
 		    $this->smarty->view('application/views/templates/login_template.tpl');		
