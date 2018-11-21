@@ -8,20 +8,17 @@
     <!--<link rel="stylesheet" href="LAB3.css" type ="text/css">-->
   </head>
   
-
-
-  
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between">
-      <a class="navbar-brand" href="index.php">
-        <img src="img/img.jpg" style="width:40px;" alt="Logo">
-      </a>
-      <ul class="navbar-nav">
+       <a class="navbar-brand" href="blog">
+        <img src="../../img/img.jpg" style="width:40px;" alt="Logo">
+      </a> 
+      <ul class="navbar-nav" {$hidden2}>
         <li class="nav-item">
-          <a class="nav-link" href="login.php">Login</a>
+          <a class="nav-link" href="login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="register.php">Register</a>
+          <a class="nav-link" href="register">Register</a>
         </li>
       </ul>
       
@@ -31,10 +28,11 @@
 
     <div class="container shadow ">
       <!-- BEGIN REGISTERFORM -->
-      <div {MESSAGE_HIDDEN} class="row justify-content-center bg-danger text-white">
-        {MESSAGE}
-
+      {if $hasErrors} 
+      <div  class="row justify-content-center bg-danger text-white">
+        {$message}
       </div>
+      {/if}
       <div class="row justify-content-center align-items-center">
         
         <div class="col-sm-4">
@@ -44,12 +42,12 @@
             </div>
             <div class="form-group">
               <label for="namefield"><sub>Nome:</sub></label>
-              <input type="text" id="namefield" class="form-control" name="name" value={NAME}>
+              <input type="text" id="namefield" class="form-control" name="name" value={$name}>
             </div>
 
             <div class="form-group">
               <label for="emailfield"><sub>Email:</sub></label>
-              <input type="text" id="emailfield" class="form-control" name="email" value={EMAIL}>
+              <input type="text" id="emailfield" class="form-control" name="email" value={$email}>
             </div>
 
             <div class="form-group">
