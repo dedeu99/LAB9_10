@@ -10,7 +10,7 @@
   
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between">
-      <a class="navbar-brand" href="./blog">
+      <a class="navbar-brand" href=".">
         <img src="../../img/img.jpg" style="width:40px;" alt="Logo">
       </a> 
       <ul class="navbar-nav" {$hidden2}>
@@ -18,7 +18,7 @@
           <a class="nav-link" href="./login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./blog/register">Register</a>
+          <a class="nav-link" href="./register">Register</a>
         </li>
       </ul>
       
