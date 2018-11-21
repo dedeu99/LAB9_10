@@ -107,16 +107,7 @@
         </div>
 
 
-        {foreach $blogs as $blog}
-        <?php
-$filename = '/path/to/foo.txt';
-
-if (file_exists($filename)) {
-    echo "The file $filename exists";
-} else {
-    echo "The file $filename does not exist";
-}
-?>
+<?php foreach ($todo as $item): ?>
         <div class="row" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
           <div class="col-sm-3 text-center"  >
             <br>
@@ -154,7 +145,7 @@ if (file_exists($filename)) {
             
           </div>
         </div>
-      {/foreach}
+<?php endforeach; ?>
       </div>
 
 
