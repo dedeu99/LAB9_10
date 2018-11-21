@@ -5,9 +5,6 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->load->model('blog_model');
-			$this->load->helper('url_helper');
-			$this->load->library('session');
 		}
 		public function index()
 		{
@@ -17,7 +14,7 @@
 			$data['USER_ID'] = '';
 			
 		    
-		    $data['blogs'] = $this->blog_model->get_posts();
+		    $data['blogs'] = NULL;
 
 		    /*$data['link1']=site_url("blog/index");
 		    $data['link2']=site_url()."/blog/login";
