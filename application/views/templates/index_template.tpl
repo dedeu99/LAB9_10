@@ -9,7 +9,6 @@
   </head>
   
   <body>
-
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between">
       <a class="navbar-brand" href="blog">
         <img src="../img/img.jpg" style="width:40px;" alt="Logo">
@@ -141,7 +140,7 @@
                 Update
               </button></a>
             </div>
-            {else}  {/if}
+            {/if}
             <div class="row align-items-center">
               <p>{$blog.content}</p>
             </div>
