@@ -116,7 +116,7 @@ value="img/user{$blog.user_id}.jpg"}
           {$success}
         {/if}
 {assign var="imagepath" 
-value="../$imagepath  "}
+value="../{$imagepath}"}
         <div class="row" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
           <div class="col-sm-3 text-center"  >
             <br>
