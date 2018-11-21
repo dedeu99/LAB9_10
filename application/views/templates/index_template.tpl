@@ -108,6 +108,7 @@
 
 
         {foreach $blogs as $blog}
+        {$smarty.const.CONST_NAME}::::
         {$smarty.current_dir}--{$smarty.template}//
 {if file_exists("../img/user$blog.user_id.jpg")}
 <a class="dropdown-item" href="#">asdasdasd</a>
