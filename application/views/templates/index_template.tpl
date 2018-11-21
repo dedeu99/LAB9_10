@@ -17,7 +17,7 @@
               </a>
       <ul  {$hidden} class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{base_url("index.php/blog")}">Post a new message</a>
+          <a class="nav-link" href="{base_url('index.php/blog')}">Post a new message</a>
         </li>
       </ul>
 
@@ -38,10 +38,10 @@
       </div> 
       <ul class="navbar-nav" {$hidden2}>
         <li class="nav-item">
-          <a class="nav-link" href="./blog/login">Login</a>
+          <a class="nav-link" href="{base_url('index.php/blog/login')}">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./blog/register">Register</a>
+          <a class="nav-link" href="{base_url('index.php/blog/register')}">Register</a>
         </li>
       </ul>
       
