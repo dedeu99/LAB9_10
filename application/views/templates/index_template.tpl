@@ -9,6 +9,10 @@
   </head>
   
   <body>
+    {base_url("blog/post/123");}
+    ---
+    {base_url();}
+    ---
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between">
       <a class="navbar-brand" href="./blog">
         <img src="../img/img.jpg" style="width:40px;" alt="Logo">
