@@ -108,16 +108,15 @@
 
 
         {foreach $blogs as $blog}
-        "../img/user{$blog.user_id}.jpg"
-        {dirname(FCPATH)}
-        {FCPATH}
-        {file_exists ( NULL )}
-        ----
-        {file_exists ( "../img/user{$blog.user_id}.jpg" )}
-        ----
-        <?php echo( file_exists ( "../img/user{$blog.user_id}.jpg" ));?>
-        ----
-        <?php echo("asd");?>
+        <?php
+$filename = '/path/to/foo.txt';
+
+if (file_exists($filename)) {
+    echo "The file $filename exists";
+} else {
+    echo "The file $filename does not exist";
+}
+?>
         <div class="row" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
           <div class="col-sm-3 text-center"  >
             <br>
