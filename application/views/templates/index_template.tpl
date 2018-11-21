@@ -121,7 +121,7 @@
               <span class="rounded-circle">
                 <img
 
-                {if }
+                {if file_exists ( "../img/user{$blog.user_id}.jpg" )}
                   src="../img/user{$blog.user_id}.jpg"
                 {else} 
                   src="../img/user" 
