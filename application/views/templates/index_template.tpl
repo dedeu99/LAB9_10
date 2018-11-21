@@ -37,10 +37,10 @@
       </div> 
       <ul class="navbar-nav" {$hidden2}>
         <li class="nav-item">
-          <a class="nav-link" href="login.php">Login</a>
+          <a class="nav-link" href="blog/login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="register.php">Register</a>
+          <a class="nav-link" href="blog/register">Register</a>
         </li>
       </ul>
       
