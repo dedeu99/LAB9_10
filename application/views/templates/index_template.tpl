@@ -13,11 +13,11 @@
     
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between">
       <a class="navbar-brand" href="{$base_url}index.php/blog">
-        <img src="../img/img.jpg" style="width:40px;" alt="Logo">
+        <img src="{$base_url}img/img.jpg" style="width:40px;" alt="Logo">
               </a>
       <ul  {$hidden} class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{base_url('index.php/blog')}">Post a new message</a>
+          <a class="nav-link" href="{$base_url}index.php/blog">Post a new message</a>
         </li>
       </ul>
 
@@ -26,7 +26,7 @@
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
 
               <span class="rounded-circle">
-                <img src="{base_url('img/img.jpg')}" style="width:40px;" alt="User Image">
+                <img src="{$base_url}img/img.jpg" style="width:40px;" alt="User Image">
               </span>
     {$USERNAME}
         </button>
@@ -38,10 +38,10 @@
       </div> 
       <ul class="navbar-nav" {$hidden2}>
         <li class="nav-item">
-          <a class="nav-link" href="{base_url('index.php/blog/login')}">Login</a>
+          <a class="nav-link" href="{$base_url}index.php/blog/login}">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{base_url('index.php/blog/register')}">Register</a>
+          <a class="nav-link" href="{$base_url}index.php/blog/register}">Register</a>
         </li>
       </ul>
       
@@ -61,13 +61,13 @@
 
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block w-100" src="../img/slide1.svg?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
+                <img class="d-block w-100" src="{$base_url}img/slide1.svg?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="../img/slide2.svg?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
+                <img class="d-block w-100" src="{$base_url}img/slide2.svg?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="../img/slide3.svg?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+                <img class="d-block w-100" src="{$base_url}img/slide3.svg?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" data-slide="prev">
@@ -121,9 +121,9 @@
                 {if file_exists("img/user{$blog.user_id}.jpg")} 
                 {assign "imgpath" "img/user{$blog.user_id}.jpg"} 
                 
-                  src="{base_url($imgpath)}"
+                  src="{$base_url}{$imgpath}"
                 {else} 
-                  src="{base_url('img/user.jpg')}" 
+                  src="{$base_url}img/user.jpg" 
                 {/if}
 
 
