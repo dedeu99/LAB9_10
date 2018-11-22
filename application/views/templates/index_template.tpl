@@ -12,7 +12,7 @@
     
     
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between">
-      <a class="navbar-brand" href="./blog">
+      <a class="navbar-brand" href="{base_url}'index.php/blog'">
         <img src="../img/img.jpg" style="width:40px;" alt="Logo">
               </a>
       <ul  {$hidden} class="navbar-nav mr-auto">

@@ -18,7 +18,7 @@
 			$data['USERNAME'] = '';	
 			$data['USER_ID'] = '';
 		    $data['blogs'] = $this->blog_model->get_posts();
-
+		    $data['base_url'] = base_url();
 		    /*$data['link1']=site_url("blog/index");
 		    $data['link2']=site_url()."/blog/login";
 		    $data['link3']=site_url()."/blog/register";*/
