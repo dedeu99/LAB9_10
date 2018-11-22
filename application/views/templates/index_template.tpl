@@ -121,7 +121,7 @@
                 
                 {if file_exists("img/user{$blog.user_id}.jpg")} 
                  {assign "path" "img/user{$blog.user_id}.jpg"} 
-                  src="{base_url('$path')}"
+                  src="{base_url('{$path}')}"
                 {else} 
                   src="{base_url('img/user.jpg')}" 
                 {/if}
