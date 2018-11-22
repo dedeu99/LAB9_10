@@ -29,10 +29,10 @@
     <div class="container shadow ">
       <!-- BEGIN REGISTERFORM -->
      <!-- {if $hasErrors}  -->
-      <div  class="row justify-content-center bg-danger text-white">
-        {$message}asdasdasd
+      <div class="row justify-content-center bg-danger text-white">
+        <!--{$message}  -->asdasdasd
       </div>
-      <!--{/if} -->
+      {/if}
       <div class="row justify-content-center align-items-center">
         
         <div class="col-sm-4">
