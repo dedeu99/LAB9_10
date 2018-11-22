@@ -26,7 +26,7 @@
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
 
               <span class="rounded-circle">
-                <img src="../img/user{$USER_ID}.jpg" style="width:40px;" alt="User Image">
+                <img src="{base_url('img/img.jpg')}" style="width:40px;" alt="User Image">
               </span>
     {$USERNAME}
         </button>
@@ -120,9 +120,9 @@
 
                 
                 {if file_exists("img/user{$blog.user_id}.jpg")} 
-                  src="../img/user{$blog.user_id}.jpg"
+                  src="{base_url('img/user{$blog.user_id}.jpg')}"
                 {else} 
-                  src="../img/user.jpg" 
+                  src="{base_url('img/user.jpg')}" 
                 {/if}
 
 
