@@ -118,11 +118,10 @@
               <span class="rounded-circle">
                 <img
 
-                
                 {if file_exists("img/user{$blog.user_id}.jpg")} 
                 {assign "imgpath" "img/user{$blog.user_id}.jpg"} 
-                 {assign "path" "{base_url($imgpath)}"} 
-                  src="{$path}"
+                
+                  src="{base_url($imgpath)}"
                 {else} 
                   src="{base_url('img/user.jpg')}" 
                 {/if}
