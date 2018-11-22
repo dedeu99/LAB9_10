@@ -26,13 +26,12 @@
  
     <br>
 
-    <div class="container shadow ">
-      <!-- BEGIN REGISTERFORM -->
-     <!-- {if $hasErrors}  -->
+    <div class="container shadow">
+      
       <div class="row justify-content-center bg-danger text-white">
         <!--{$message}  -->asdasdasd
       </div>
-      <!-- {/if}-->
+     
       <div class="row justify-content-center align-items-center">
         
         <div class="col-sm-4">
