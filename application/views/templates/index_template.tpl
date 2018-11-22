@@ -38,10 +38,10 @@
       </div> 
       <ul class="navbar-nav" {$hidden2}>
         <li class="nav-item">
-          <a class="nav-link" href="{$base_url}index.php/blog/login}">Login</a>
+          <a class="nav-link" href="{$base_url}index.php/blog/login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{$base_url}index.php/blog/register}">Register</a>
+          <a class="nav-link" href="{$base_url}index.php/blog/register">Register</a>
         </li>
       </ul>
       
