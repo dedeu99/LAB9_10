@@ -49,7 +49,11 @@
             }
             else
             {
-                $this->load->view('formsuccess');
+            	echo $name;
+            	echo "---------";
+            	echo $_SESSION['name'];
+            	//$this->blog_model->registerUser($name,$email,$password);
+               // $this->load->view('formsuccess');
             }
 		}
 		public function login()
