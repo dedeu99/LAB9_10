@@ -17,7 +17,6 @@
 
             $this->load->library('form_validation');
 		}
-		$data['base_url'] = base_url();
 		public function index()
 		{
 			$data['hidden'] = 'hidden';
