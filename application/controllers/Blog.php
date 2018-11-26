@@ -5,7 +5,7 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->load->model('blog_model');
+			$this->load->model('blog_model','b');
 
 			$this->load->helper('url_helper');
 			$this->load->helper('url');
@@ -54,7 +54,7 @@
             else
             {
             	$this->blog_model->get_posts();
-            	$this->blog_model->register_user();
+            	$this->b->register_user();
                // $this->load->view('formsuccess');
             }
 		}
