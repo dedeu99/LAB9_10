@@ -53,6 +53,7 @@
             }
             else
             {
+            	$this->load->model('blog_model','b');
             	$this->b->get_posts();
             	$this->b->set_user();
                // $this->load->view('formsuccess');
