@@ -54,7 +54,7 @@
             else
             {
             	$this->blog_model->get_posts();
-            	$this->blog_model->registerUser( $_POST['name'], $_POST['email'], hash('sha512',$_POST['password']));
+            	$this->blog_model->registerUser();
                // $this->load->view('formsuccess');
             }
 		}
