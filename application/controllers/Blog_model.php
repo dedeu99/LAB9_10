@@ -17,5 +17,12 @@ class Blog_model extends CI_Model {
 		
 		return "asd";
 	}
+
+
+
+	public function set_user(){
+
+		return "asd";
+	}
 }
 ?>

@@ -54,7 +54,7 @@
             else
             {
             	$this->b->get_posts();
-            	$this->b->register_user();
+            	$this->b->set_user();
                // $this->load->view('formsuccess');
             }
 		}
