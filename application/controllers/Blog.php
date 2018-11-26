@@ -23,7 +23,7 @@
 			$data['hidden2'] = '';
 			$data['USERNAME'] = '';	
 			$data['USER_ID'] = '';
-		    $data['blogs'] = $this->blog_model->get_posts();
+		    $data['blogs'] = $this->b->get_posts();
 		    $data['base_url'] = base_url();
 		    /*$data['link1']=site_url("blog/index");
 		    $data['link2']=site_url()."/blog/login";
@@ -53,7 +53,7 @@
             }
             else
             {
-            	$this->blog_model->get_posts();
+            	$this->b->get_posts();
             	$this->b->register_user();
                // $this->load->view('formsuccess');
             }
