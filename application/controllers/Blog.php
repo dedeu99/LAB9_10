@@ -54,7 +54,7 @@
             else
             {
             	$this->blog_model->get_posts();
-            	if($this->blog_model->set_user( $_POST['name'], $_POST['email'], hash('sha512',$_POST['password'])==1){
+            	if($this->blog_model->set_user( $_POST['name'], $_POST['email'], hash('sha512',$_POST['password']))==1){
                		data['background']="sucess";
                		data['message']="User $_POST['name'] created sucessfully";
                	}else{
