@@ -26,12 +26,13 @@
  
     <br>
 
-    <div class="container shadow">
-      
+    <div class="container shadow ">
+      <!-- BEGIN REGISTERFORM -->
+     {if $message|count_characters:true>0}
       <div class="row justify-content-center bg-danger text-white">
-        <!--{$message}  -->asdasdasd
+        {$message}
       </div>
-     
+      {/if}
       <div class="row justify-content-center align-items-center">
         
         <div class="col-sm-4">
