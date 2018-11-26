@@ -10,5 +10,8 @@ class Blog_model extends CI_Model {
 		$query = $this->db->query($query_RAW);
 		return $query->result_array();	
 	}
+	public function set_user(){
+		echo "asd";
+	}
 }
 ?>
