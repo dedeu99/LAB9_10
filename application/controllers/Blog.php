@@ -41,7 +41,7 @@
 
             if ($this->form_validation->run() == FALSE)
             {
-            	$data['message'] = '';
+            	$data['message'] = validation_errors();
             	$data['base_url'] = base_url();
                 $this->smarty->view('application/views/templates/register_template.tpl', $data);
             }
