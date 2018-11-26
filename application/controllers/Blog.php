@@ -5,7 +5,7 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->load->model('blog_model','b');
+			$this->load->model('blog_model');
 
 			$this->load->helper('url_helper');
 			$this->load->helper('url');
@@ -23,7 +23,7 @@
 			$data['hidden2'] = '';
 			$data['USERNAME'] = '';	
 			$data['USER_ID'] = '';
-		    $data['blogs'] = $this->b->get_posts();
+		    $data['blogs'] = $this->blog_model->get_posts();
 		    $data['base_url'] = base_url();
 		    /*$data['link1']=site_url("blog/index");
 		    $data['link2']=site_url()."/blog/login";
@@ -53,9 +53,8 @@
             }
             else
             {
-            	$this->load->model('blog_model','b');
-            	$this->b->get_posts();
-            	$this->b->set_user();
+            	$this->blog_model->get_posts();
+            	$this->blog_model->set_user( $_POST['name'], $_POST['email'], hash('sha512',$_POST['password']));
                // $this->load->view('formsuccess');
             }
 		}
