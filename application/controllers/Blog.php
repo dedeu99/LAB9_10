@@ -49,10 +49,7 @@
             }
             else
             {
-            	//echo $name;
-            	echo "---------";
-            	echo $_POST['name'];
-            	//$this->blog_model->registerUser($name,$email,$password);
+            	$this->blog_model->registerUser( $_POST['name'], $_POST['email'], hash('sha512',$_POST['password']));
                // $this->load->view('formsuccess');
             }
 		}
