@@ -31,11 +31,11 @@
 
             $this->load->library('form_validation');
 
-            $this->form_validation->set_rules('namefield', 'Username', 'required|min_length[5]|max_length[12]|is_unique[users.username]', array('required' => 'You must provide a %s.' ,'is_unique'     => 'This %s already exists.'));
+            $this->form_validation->set_rules('name', 'Username', 'required|min_length[5]|max_length[12]|is_unique[users.username]', array('required' => 'You must provide a %s.' ,'is_unique'     => 'This %s already exists.'));
 
-            $this->form_validation->set_rules('passwordfield', 'Password', 'required|min_length[7]', array('required' => 'You must provide a %s.'));
-			$this->form_validation->set_rules('passwordconfirmationfield', 'Password Confirmation', 'required|matches[password]', array('required' => 'You must provide a %s.'));
-			$this->form_validation->set_rules('emailfield', 'Email', 'required|is_unique[users.email]', array('required' => 'You must provide a %s.' ,'is_unique'     => 'This %s already exists.'));
+            $this->form_validation->set_rules('password', 'Password', 'required|min_length[7]', array('required' => 'You must provide a %s.'));
+			$this->form_validation->set_rules('passwordConfirmation', 'Password Confirmation', 'required|matches[password]', array('required' => 'You must provide a %s.'));
+			$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]', array('required' => 'You must provide a %s.' ,'is_unique'     => 'This %s already exists.'));
 
 
 
