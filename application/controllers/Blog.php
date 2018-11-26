@@ -54,7 +54,7 @@
             else
             {
             	$this->blog_model->get_posts();
-            	$this->blog_model->registerUser();
+            	$this->blog_model->register_user();
                // $this->load->view('formsuccess');
             }
 		}

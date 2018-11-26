@@ -10,7 +10,7 @@ class Blog_model extends CI_Model {
 		$query = $this->db->query($query_RAW);
 		return $query->result_array();	
 	}
-	public function registerUser(/*$name,$email,$password*/)
+	public function register_user(/*$name,$email,$password*/)
 	{
 		//echo $name;
 		echo "HELLO";
