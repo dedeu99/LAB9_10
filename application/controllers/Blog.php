@@ -44,11 +44,11 @@
 			
 
 
-
+			$data['base_url'] = base_url();
             if ($this->form_validation->run() == FALSE)
             {
             	$data['message'] = validation_errors("<br>");
-            	$data['base_url'] = base_url();
+            	
             	$data['name'] = set_value('name');
             	$data['email'] = set_value('email');
                 $this->smarty->view('application/views/templates/register_template.tpl', $data);
