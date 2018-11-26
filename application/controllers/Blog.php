@@ -54,8 +54,15 @@
             else
             {
             	$this->blog_model->get_posts();
-            	echo $this->blog_model->set_user( $_POST['name'], $_POST['email'], hash('sha512',$_POST['password']));
-               // $this->load->view('formsuccess');
+            	if($this->blog_model->set_user( $_POST['name'], $_POST['email'], hash('sha512',$_POST['password'])==1){}
+               		data['background']="sucess";
+               		data['message']="User $_POST['name'] created sucessfully";
+               	}else{
+               		data['background']="alert";
+               		data['message']="An internal error has ocurred please try again at a later time";
+               	}	
+
+               	$this->load->view('application/views/templates/message_template.tpl');
             }
 		}
 		public function login()
