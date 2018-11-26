@@ -3,6 +3,7 @@
   <head>
     <title>LAB9_10</title>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="{$time};url={$base_url}index.php/blog" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!--<link rel="stylesheet" href="LAB3.css" type ="text/css">-->
@@ -10,15 +11,15 @@
   
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between">
-      <a class="navbar-brand" href="index.php">
-        <img src="img/img.jpg" style="width:40px;" alt="Logo">
+      <a class="navbar-brand" href="{$base_url}index.php/blog">
+        <img src="{$base_url}img/img.jpg" style="width:40px;" alt="Logo">
       </a>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="login.php">Login</a>
+          <a class="nav-link" href="{$base_url}index.php/blog/login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="register.php">Register</a>
+          <a class="nav-link" href="{$base_url}index.php/blog/register">Register</a>
         </li>
       </ul>
       
@@ -32,7 +33,7 @@
         <p>{$message}</p>
       </div>
       <div class="row justify-content-center align-items-center">
-        <p>You will be automatically redirected in 5 seconds. As an alternative press <a href="index.php">here</a> to go to the first page.</p>
+        <p>You will be automatically redirected in 5 seconds. As an alternative press <a href="{$base_url}index.php/blog">here</a> to go to the first page.</p>
       </div>
 
       <!-- END SUCESSFORM -->

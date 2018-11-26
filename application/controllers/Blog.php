@@ -17,6 +17,7 @@
 
             $this->load->library('form_validation');
 		}
+		$data['base_url'] = base_url();
 		public function index()
 		{
 			$data['hidden'] = 'hidden';
@@ -24,7 +25,7 @@
 			$data['USERNAME'] = '';	
 			$data['USER_ID'] = '';
 		    $data['blogs'] = $this->blog_model->get_posts();
-		    $data['base_url'] = base_url();
+		    
 		    /*$data['link1']=site_url("blog/index");
 		    $data['link2']=site_url()."/blog/login";
 		    $data['link3']=site_url()."/blog/register";*/
@@ -53,7 +54,7 @@
             }
             else
             {
-            	$this->blog_model->get_posts();
+            	$data['time']="5";
             	if($this->blog_model->set_user( $_POST['name'], $_POST['email'], hash('sha512',$_POST['password']))==1){
                		$data['background']="sucess";
                		$name = $_POST['name'];
