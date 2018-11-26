@@ -49,7 +49,7 @@
             }
             else
             {
-            	echo $name;
+            	//echo $name;
             	echo "---------";
             	echo $_SESSION['name'];
             	//$this->blog_model->registerUser($name,$email,$password);
