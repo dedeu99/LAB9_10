@@ -63,7 +63,7 @@
                		$data['message']="An internal error has ocurred please try again at a later time";
                	}	
 
-               	$this->load->view('application/views/templates/message_template.tpl', $data);
+               	$this->smarty->view('application/views/templates/message_template.tpl', $data);
             }
 		}
 		public function login()
