@@ -51,7 +51,7 @@
             {
             	//echo $name;
             	echo "---------";
-            	echo $_SESSION['name'];
+            	echo $_POST['name'];
             	//$this->blog_model->registerUser($name,$email,$password);
                // $this->load->view('formsuccess');
             }
