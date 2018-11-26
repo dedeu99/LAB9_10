@@ -10,6 +10,12 @@
 			$this->load->helper('url_helper');
 			$this->load->helper('url');
 			$this->load->library('session');
+
+
+
+			$this->load->helper(array('form', 'url'));
+
+            $this->load->library('form_validation');
 		}
 		public function index()
 		{
@@ -27,9 +33,7 @@
 		}
 		public function register()
 		{
-			$this->load->helper(array('form', 'url'));
-
-            $this->load->library('form_validation');
+			
 
             $this->form_validation->set_rules('name', 'Username', 'required|min_length[5]|max_length[12]|is_unique[users.name]', array('required' => 'You must provide a %s.' ,'is_unique'     => 'This %s already exists.'));
 
