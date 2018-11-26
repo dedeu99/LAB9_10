@@ -19,6 +19,8 @@
 		}
 		public function index()
 		{
+
+			$data['base_url'] = base_url();
 			$data['hidden'] = 'hidden';
 			$data['hidden2'] = '';
 			$data['USERNAME'] = '';	
