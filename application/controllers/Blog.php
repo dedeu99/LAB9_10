@@ -57,11 +57,11 @@
             {
             	$data['time']="5";
             	if($this->blog_model->set_user( $_POST['name'], $_POST['email'], hash('sha512',$_POST['password']))==1){
-               		$data['background']="sucess";
+               		$data['background']="success";
                		$name = $_POST['name'];
                		$data['message']="User $name created sucessfully";
                	}else{
-               		$data['background']="alert";
+               		$data['background']="danger";
                		$data['message']="An internal error has ocurred please try again at a later time";
                	}	
 
