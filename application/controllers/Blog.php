@@ -69,12 +69,12 @@
             }
 		}
 
-		private function checkEmailExists($email){
+		private function check_email_exists($email){
 			return $this->blog_model->email_exists($email);
 		}
 		public function login()
 		{
-            $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]', array('required' => 'You must provide a %s.' ,'is_unique'     => 'This %s does not exist please register first.'));
+            $this->form_validation->set_rules('email', 'Email', 'required|valid_email|callback_check_email_exists', array('required' => 'You must provide a %s.' ,'check_email_exists'     => 'This %s does not exist please register first.'));
             $this->form_validation->set_rules('password', 'Password', 'required|min_length[7]', array('required' => 'You must provide a %s.'));
 			
 
