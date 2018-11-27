@@ -83,8 +83,9 @@
             if ($this->form_validation->run() == FALSE)
             {
             	$data['message'] = validation_errors(' ', '<br>');
-            	echo $this->blog_model->email_exists($email);
+            	
             	$data['email'] = set_value('email');
+            	echo $this->blog_model->email_exists($data['email']);
                 $this->smarty->view('application/views/templates/login_template.tpl', $data);
             }
             else
