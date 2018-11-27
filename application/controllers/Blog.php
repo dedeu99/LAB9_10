@@ -69,8 +69,8 @@
             }
 		}
 
-		public function check_email_exists($email){
-			return $this->blog_model->email_exists($email);
+		public function check_email_exists($email_check){
+			return $this->blog_model->email_exists($email_check);
 		}
 		public function login()
 		{
