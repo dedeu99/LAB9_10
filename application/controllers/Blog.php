@@ -70,8 +70,37 @@
 		}
 		public function login()
 		{
+            $this->form_validation->set_rules('email', 'Email', 'required|valid_email|!is_unique[users.email]', array('required' => 'You must provide a %s.' ,'is_unique'     => 'This %s does not exist please register first.'));
+            $this->form_validation->set_rules('password', 'Password', 'required|min_length[7]', array('required' => 'You must provide a %s.'));
 			
-		    $this->smarty->view('application/views/templates/login_template.tpl');		
+
+
+			$data['base_url'] = base_url();
+            if ($this->form_validation->run() == FALSE)
+            {
+            	$data['message'] = validation_errors("<br>");
+
+            	$data['email'] = set_value('email');
+                $this->smarty->view('application/views/templates/login_template.tpl', $data);
+            }
+            else
+            {
+            	$data['time']="5";
+            	/*if($this->blog_model->login_user( $_POST['name'], $_POST['email'], hash('sha512',$_POST['password']))==1){*/
+               		$data['background']="success";
+               		$name = $_POST['name'];
+               		$data['message']="User $name logged in sucessfully";
+               	/*}else{
+               		$data['background']="danger";
+               		$data['message']="An internal error has ocurred please try again at a later time";
+               	}	*/
+
+               	$this->smarty->view('application/views/templates/message_template.tpl', $data);
+            }
+
+
+
+		    
 		}
 	}
 ?> 
