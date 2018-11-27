@@ -11,7 +11,7 @@
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between">
       <a class="navbar-brand" href="{$base_url}index.php/blog">
-        <img src="{$base_url}index.php/blog/img/img.jpg" style="width:40px;" alt="Logo">
+        <img src="{$base_url}img/img.jpg" style="width:40px;" alt="Logo">
       </a> 
       <ul class="navbar-nav" {$hidden2}>
         <li class="nav-item">
@@ -28,8 +28,8 @@
 
     <div class="container shadow ">
       <!-- BEGIN LOGINFORM -->
-      {if $hasErrors} 
-      <div  class="row justify-content-center bg-danger text-white">
+      {if $message|count_characters:true>0}
+      <div class="row justify-content-center bg-danger text-white">
         {$message}
       </div>
       {/if}
