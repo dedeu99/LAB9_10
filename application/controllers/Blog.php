@@ -70,7 +70,7 @@
 		}
 
 		public function check_email_exists($email_check){
-			return $this->blog_model->email_exists($email_check);
+			return $this->blog_model->email_exists($email_check)==0?false:true;
 		}
 		public function login()
 		{
@@ -85,7 +85,7 @@
             	$data['message'] = validation_errors(' ', '<br>');
             	
             	$data['email'] = set_value('email');
-            	echo $this->blog_model->email_exists($data['email']);
+            	//echo $this->blog_model->email_exists($data['email']);
                 $this->smarty->view('application/views/templates/login_template.tpl', $data);
             }
             else
