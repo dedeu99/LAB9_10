@@ -69,9 +69,8 @@
             }
 		}
 
-		private fuction checkEmailExists($email){
-			$awsome = $this->blog_model->email_exists($email);
-			return true;
+		private function checkEmailExists($email){
+			return $this->blog_model->email_exists($email);
 		}
 		public function login()
 		{
