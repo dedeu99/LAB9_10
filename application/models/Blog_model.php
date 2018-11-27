@@ -15,7 +15,7 @@ class Blog_model extends CI_Model {
 		return $this->db->query($query_RAW);
 	}
 	public function email_exists($email){
-		return $this->db->where(['email'=$email])->from("users")->count_all_results();
+		return $this->db->where(['email'==$email])->from("users")->count_all_results();
 	}
 }
 ?>
