@@ -68,6 +68,11 @@
                	$this->smarty->view('application/views/templates/message_template.tpl', $data);
             }
 		}
+
+		private fuction checkEmailExists($email){
+			$awsome = $this->blog_model->email_exists($email);
+			return true;
+		}
 		public function login()
 		{
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]', array('required' => 'You must provide a %s.' ,'is_unique'     => 'This %s does not exist please register first.'));
@@ -79,7 +84,7 @@
             if ($this->form_validation->run() == FALSE)
             {
             	$data['message'] = validation_errors(' ', '<br>');
-
+            	echo $this->blog_model->email_exists($email);
             	$data['email'] = set_value('email');
                 $this->smarty->view('application/views/templates/login_template.tpl', $data);
             }
