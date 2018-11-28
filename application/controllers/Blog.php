@@ -23,7 +23,7 @@
 		public function index()
 		{
 			$data['loggedin']=false;
-			if(isloggedin()){
+			if($this->isloggedin()){
 				$data['username'] = $this->session->user;
 				$data['id'] = $this->session->userId;
 				$data['loggedin']=true;
@@ -37,7 +37,7 @@
 		   
 		    $this->smarty->view('application/views/templates/index_template.tpl', $data);		
 		}
-		function isloggedin(){
+		public function isloggedin(){
 			return isset($this->session->userId)&&isset($this->session->user);
 		}
 		public function register()
