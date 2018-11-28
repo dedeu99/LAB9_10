@@ -30,8 +30,6 @@
 			}
 
 			$data['base_url'] = base_url();
-			$data['hidden'] = 'hidden';
-			$data['hidden2'] = '';
 			$data['USERNAME'] = '';	
 			$data['USER_ID'] = '';
 		    $data['blogs'] = $this->blog_model->get_posts();
