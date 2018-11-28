@@ -43,7 +43,7 @@
 		public function register()
 		{
 			if($this->isloggedin()){
-				redirect('/'.base_url().'/index.php/blog');
+				redirect(prep_url(base_url().'/index.php/blog'));
 
 			}
 
