@@ -17,13 +17,13 @@
 
             $this->load->library('form_validation');
 		}
-		public function is_loggedin(){
+		/*public function is_loggedin(){
 			return isset($this->session->userId)&&isset($this->session->user);
-		}
+		}*/
 		public function index()
 		{
 			$data['loggedin']=false;
-			if(is_loggedin()){
+			if(isset($this->session->userId)&&isset($this->session->user)){
 				$data['username'] = $this->session->user;
 				$data['id'] = $this->session->userId;
 				$data['loggedin']=true;
@@ -72,7 +72,6 @@
                	$this->smarty->view('application/views/templates/message_template.tpl', $data);
             }
 		}
-
 		public function check_email_exists($email_check){
 			return $this->blog_model->email_exists($email_check)==0?false:true;
 		}
@@ -96,8 +95,7 @@
             {
             	$data['time']="5";
             	$user=$this->blog_model->login_user( $_POST['email'], hash('sha512',$_POST['password']));
-            	
-            	if(is_null($user)){  		
+				if(is_null($user)){  		
                		$data['message']="The password entered does not match";
                		$data['email'] = set_value('email');
                		$this->smarty->view('application/views/templates/login_template.tpl', $data);
@@ -110,7 +108,7 @@
                		$this->session->user=$name;
                		$this->session->userId=$id;
                		$this->smarty->view('application/views/templates/message_template.tpl', $data);
-               	}
+               	} 
             }    
 		}
 	}
