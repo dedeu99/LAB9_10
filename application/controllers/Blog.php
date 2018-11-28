@@ -94,18 +94,21 @@
             	$id=$this->blog_model->login_user( $_POST['email'], hash('sha512',$_POST['password']));
             	
             	if($id<0){
-               		$data['background']="danger";
-               		$data['message']="An internal error has ocurred please try again at a later time";
+               		
+               		$data['message']="The password entered does not match";
+               		$data['email'] = set_value('email');
+               		$this->smarty->view('application/views/templates/login_template.tpl', $data);
                	}else{
                		$data['background']="success";
                		$name = $_POST['name'];
                		
-               		$data['message']="User $name logged in sucessfully &id";
+               		$data['message']="User $name logged in sucessfully $id";
 
                		$this->session->user=$name;
                		$this->session->userId=$id;
+               		$this->smarty->view('application/views/templates/message_template.tpl', $data);
                	}
-               	$this->smarty->view('application/views/templates/message_template.tpl', $data);
+               	
             }
 
 
