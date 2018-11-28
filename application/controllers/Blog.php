@@ -19,6 +19,15 @@
 		}
 		public function index()
 		{
+			if(isset($this->session->userId)&&isset($this->session->user)){
+			$data['hidden'] = 'hidden';
+			$data['hidden2'] = '';
+			$data['username'] = $this->session->user;
+			$data['id'] = $this->session->userId;
+			}else{
+				$data['hidden'] = 'hidden';
+				$data['hidden2'] = '';
+			}
 
 			$data['base_url'] = base_url();
 			$data['hidden'] = 'hidden';
@@ -93,8 +102,7 @@
             	$data['time']="5";
             	$user=$this->blog_model->login_user( $_POST['email'], hash('sha512',$_POST['password']));
             	
-            	if(is_null($user)){
-               		
+            	if(is_null($user)){  		
                		$data['message']="The password entered does not match";
                		$data['email'] = set_value('email');
                		$this->smarty->view('application/views/templates/login_template.tpl', $data);

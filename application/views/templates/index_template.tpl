@@ -28,7 +28,7 @@
               <span class="rounded-circle">
                 <img src="{$base_url}img/img.jpg" style="width:40px;" alt="User Image">
               </span>
-    {$USERNAME}
+    {$username}
         </button>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item" href="#">Profile</a>
@@ -38,7 +38,7 @@
       </div> 
       <ul class="navbar-nav" {$hidden2}>
         <li class="nav-item">
-          <a class="nav-link" href="{$base_url}index.php/blog/login">Login</a>
+          <a class="nav-link" href="{$base_url}index.php/blog/login">Login</a>x
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{$base_url}index.php/blog/register">Register</a>
