@@ -19,7 +19,7 @@
       {if $loggedin} 
           <ul  {$hidden} class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{$base_url}index.php/blog">Post a new message</a>
+              <a class="nav-link" href="{$base_url}index.php/blog/post">Post a new message</a>
             </li>
           </ul>
 

@@ -123,5 +123,18 @@
                	} 
             }    
 		}
+		public function post($postid = '')
+		{
+			if (!empty($postid)) {  
+				$data['message']="updating post $postid";
+               	$data['background']="success";
+     			$this->smarty->view('application/views/templates/message_template.tpl', $data);
+   			}else{
+   				$data['message']="~creating a new post";
+               	$data['background']="success";
+     			$this->smarty->view('application/views/templates/message_template.tpl', $data);
+
+   			}
+		}
 	}
 ?> 
