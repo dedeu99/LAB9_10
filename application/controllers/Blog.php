@@ -23,7 +23,7 @@
 		public function index()
 		{
 			$data['loggedin']=false;
-			if(isset($this->session->userId)&&isset($this->session->user)){
+			if(isloggedin()){
 				$data['username'] = $this->session->user;
 				$data['id'] = $this->session->userId;
 				$data['loggedin']=true;
@@ -36,6 +36,9 @@
 		    $data['link3']=site_url()."/blog/register";*/
 		   
 		    $this->smarty->view('application/views/templates/index_template.tpl', $data);		
+		}
+		public function isloggedin(){
+			return isset($this->session->userId)&&isset($this->session->user);
 		}
 		public function register()
 		{
@@ -75,6 +78,7 @@
 		public function check_email_exists($email_check){
 			return $this->blog_model->email_exists($email_check)==0?false:true;
 		}
+
 		public function logout(){
 
 
