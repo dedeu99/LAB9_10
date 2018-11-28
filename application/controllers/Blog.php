@@ -147,7 +147,7 @@
 			if (!empty($postid)) {  
 				//$data['content']=
 
-				var_dump($this->blog_model->getpost($postid));
+				var_dump($this->blog_model->getpost($postid)['content']);
    			}
    				
    			$data['base_url'] = base_url();
