@@ -91,17 +91,17 @@
             else
             {
             	$data['time']="5";
-            	$id=$this->blog_model->login_user( $_POST['email'], hash('sha512',$_POST['password']));
+            	$user=$this->blog_model->login_user( $_POST['email'], hash('sha512',$_POST['password']));
             	
-            	if($id<0){
+            	if(is_null($user)){
                		
                		$data['message']="The password entered does not match";
                		$data['email'] = set_value('email');
                		$this->smarty->view('application/views/templates/login_template.tpl', $data);
                	}else{
                		$data['background']="success";
-               		$name = $_POST['name'];
-               		
+               		$name = $user['name'];
+               		$id = $user['id'];
                		$data['message']="User $name logged in sucessfully $id";
 
                		$this->session->user=$name;
