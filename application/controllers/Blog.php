@@ -76,7 +76,15 @@
 			return $this->blog_model->email_exists($email_check)==0?false:true;
 		}
 		public function logout(){
-			$this->session->sess_destroy();
+
+
+	   		$data['background']="success";
+	   		$name = $this->session->user;
+	   		$data['message']="User $name logged out sucessfully";
+
+	   		$this->session->sess_destroy();
+	   		$this->smarty->view('application/views/templates/message_template.tpl', $data);
+			
 		}
 		public function login()
 		{
@@ -106,7 +114,7 @@
                		$data['background']="success";
                		$name = $user['name'];
                		$id = $user['id'];
-               		$data['message']="User $name logged in sucessfully $id";
+               		$data['message']="User $name logged in sucessfully";
 
                		$this->session->user=$name;
                		$this->session->userId=$id;
