@@ -149,7 +149,7 @@
      			
    			}
    				
-   			
+   			$data['base_url'] = base_url();
    			$data['username'] = $this->session->user;
 			$data['id'] = $this->session->userId;
    			$this->smarty->view('application/views/templates/blog_template.tpl', $data);
