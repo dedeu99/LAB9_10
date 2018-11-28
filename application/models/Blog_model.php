@@ -19,7 +19,9 @@ class Blog_model extends CI_Model {
 	}
 
 	public function login_user( $email, $hashedpassword){
-		return $this->db->where('password_digest',$hashedpassword)->where('email',$email)->from("users")->select('id')->result_array();	
+		$query_RAW = "SELECT id FROM users WHERE email = $email AND password_digest=$password";
+		$query = $this->db->query($query_RAW);
+		return $query->result_array();	
 	}
 }
 ?>
