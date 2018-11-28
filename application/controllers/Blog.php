@@ -91,7 +91,7 @@
             else
             {
             	$data['time']="5";
-            	if($id=$this->blog_model->login_user( $_POST['name'], $_POST['email'], hash('sha512',$_POST['password']))==1){
+            	if($id=$this->blog_model->login_user( $_POST['email'], hash('sha512',$_POST['password']))==1){
                		$data['background']="success";
                		$name = $_POST['name'];
                		

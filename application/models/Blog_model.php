@@ -15,10 +15,9 @@ class Blog_model extends CI_Model {
 		return $this->db->query($query_RAW);
 	}
 	public function email_exists($email){
-		$obj=$this->db->where('email',$email)->from("users");
-		if($obj->count_all_results()==1)
-			return 1;
-		return -1;
+		return $this->db->where('email',$email)->from("users")->count_all_results();
 	}
-}
+	public function login_user( $email, $hashedpassword){
+		return $this->db->where('password_digest',$hashedpassword)->where('email',$email)->from("users")->select('id');	
+	}
 ?>
