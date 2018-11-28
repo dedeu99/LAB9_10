@@ -7,13 +7,13 @@
 			parent::__construct();
 			$this->load->model('blog_model');
 
-			$this->load->helper('url_helper');
+			//$this->load->helper('url_helper');
 			$this->load->helper('url');
 			$this->load->library('session');
 
 
 
-			$this->load->helper(array('form', 'url'));
+			//$this->load->helper(array('form', 'url'));
 
             $this->load->library('form_validation');
 		}
@@ -44,7 +44,7 @@
 		{
 			if($this->isloggedin()){
 				//redirect(prep_url(base_url().'/index.php/blog'));
-				redirect(base_url('index.php/blog'),'refresh');
+				redirect(base_url('index.php/blog'),'location');
 			}
 
             $this->form_validation->set_rules('name', 'Username', 'required|min_length[5]|max_length[12]|is_unique[users.name]', array('required' => 'You must provide a %s.' ,'is_unique'     => 'This %s already exists.'));
