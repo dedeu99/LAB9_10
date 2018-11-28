@@ -77,7 +77,7 @@
 		}
 		public function logout(){
 
-			
+
 			$data['base_url'] = base_url();
 	   		$data['background']="success";
 	   		$name = $this->session->user;
@@ -105,7 +105,7 @@
             }
             else
             {
-            	$data['time']="5";
+            	
             	$user=$this->blog_model->login_user( $_POST['email'], hash('sha512',$_POST['password']));
 				if(is_null($user)){  		
                		$data['message']="The password entered does not match";
