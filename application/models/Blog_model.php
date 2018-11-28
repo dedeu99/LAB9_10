@@ -27,5 +27,9 @@ class Blog_model extends CI_Model {
 		else	
 			return NULL;	
 	}
+
+	public function getpost($postid){
+		return $this->db->where('id',$postid)->from("microposts");
+	}
 }
 ?>

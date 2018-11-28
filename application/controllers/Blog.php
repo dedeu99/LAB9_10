@@ -145,8 +145,7 @@
 
 			$data['content']="creating a new post";
 			if (!empty($postid)) {  
-				$data['content']="updating post $postid";
-     			
+				$data['content']=($this->blog_model->getpost($postid))['content'];
    			}
    				
    			$data['base_url'] = base_url();
