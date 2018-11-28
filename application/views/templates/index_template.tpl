@@ -17,14 +17,14 @@
               </a>
 
       {if $loggedin} 
-          <ul  {$hidden} class="navbar-nav mr-auto">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link" href="{$base_url}index.php/blog/post">Post a new message</a>
             </li>
           </ul>
 
 
-          <div class="dropdown" {$hidden}>
+          <div class="dropdown" >
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
               <span class="rounded-circle">
                 <img src="{$base_url}img/img.jpg" style="width:40px;" alt="User Image">
@@ -38,7 +38,7 @@
             </div>
           </div> 
       {else}
-        <ul class="navbar-nav" {$hidden2}>
+        <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="{$base_url}index.php/blog/login">Login</a>
           </li>

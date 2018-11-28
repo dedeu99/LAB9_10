@@ -42,10 +42,9 @@
 		}
 		public function register()
 		{
-			if($this->isloggedin()){
-				//redirect(prep_url(base_url().'/index.php/blog'));
+			if($this->isloggedin())
 				redirect('blog');
-			}
+			
 
             $this->form_validation->set_rules('name', 'Username', 'required|min_length[5]|max_length[12]|is_unique[users.name]', array('required' => 'You must provide a %s.' ,'is_unique'     => 'This %s already exists.'));
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]', array('required' => 'You must provide a %s.' ,'is_unique'     => 'This %s already exists.'));
@@ -65,7 +64,6 @@
             }
             else
             {
-            	$data['time']="5";
             	if($this->blog_model->set_user( $_POST['name'], $_POST['email'], hash('sha512',$_POST['password']))==1){
                		$data['background']="success";
                		$name = $_POST['name'];
@@ -83,7 +81,8 @@
 		}
 
 		public function logout(){
-
+			if(!$this->isloggedin())
+				redirect('blog');
 
 			$data['base_url'] = base_url();
 	   		$data['background']="success";
@@ -96,6 +95,10 @@
 		}
 		public function login()
 		{
+			if($this->isloggedin())
+				redirect('blog');
+
+
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email|callback_check_email_exists', array('required' => 'You must provide a %s.' ,'check_email_exists'     => 'This %s does not exist please register first.'));
             $this->form_validation->set_rules('password', 'Password', 'required|min_length[7]', array('required' => 'You must provide a %s.'));
 			
@@ -132,16 +135,24 @@
 		}
 		public function post($postid = '')
 		{
-			if (!empty($postid)) {  
-				$data['message']="updating post $postid";
-               	$data['background']="success";
-     			$this->smarty->view('application/views/templates/message_template.tpl', $data);
-   			}else{
-   				$data['message']="~creating a new post";
-               	$data['background']="success";
-     			$this->smarty->view('application/views/templates/message_template.tpl', $data);
+			if(!$this->isloggedin()){
+				$data['background']="danger";
+               	$data['message']="You need to login before posting";
+               	$this->smarty->view('application/views/templates/message_template.tpl', $data);
+			}
 
+
+
+			$data['content']="creating a new post";
+			if (!empty($postid)) {  
+				$data['content']="updating post $postid";
+     			
    			}
+   				
+   			
+   			$data['username'] = $this->session->user;
+			$data['id'] = $this->session->userId;
+   			$this->smarty->view('application/views/templates/blog_template.tpl', $data);
 		}
 	}
 ?> 
