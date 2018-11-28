@@ -37,7 +37,7 @@
 		   
 		    $this->smarty->view('application/views/templates/index_template.tpl', $data);		
 		}
-		public function isloggedin(){
+		public isloggedin(){
 			return isset($this->session->userId)&&isset($this->session->user);
 		}
 		public function register()
