@@ -20,8 +20,8 @@
 		public function index()
 		{
 			if(isset($this->session->userId)&&isset($this->session->user)){
-			$data['hidden'] = 'hidden';
-			$data['hidden2'] = '';
+			$data['hidden'] = '';
+			$data['hidden2'] = 'hidden';
 			$data['username'] = $this->session->user;
 			$data['id'] = $this->session->userId;
 			}else{
