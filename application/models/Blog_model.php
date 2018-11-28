@@ -21,7 +21,11 @@ class Blog_model extends CI_Model {
 	public function login_user( $email, $hashedpassword){
 		$query_RAW = "SELECT id FROM users WHERE email = '$email' AND password_digest='$hashedpassword'";
 		$query = $this->db->query($query_RAW);
-		return $query->result_array();	
+		$arr=$query->result_array();
+		if(count($arr)==1)
+			return $arr[0]['id'];
+		else	
+			return -1;	
 	}
 }
 ?>
