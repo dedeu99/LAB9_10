@@ -15,36 +15,38 @@
       <a class="navbar-brand" href="{$base_url}index.php/blog">
         <img src="{$base_url}img/img.jpg" style="width:40px;" alt="Logo">
               </a>
-      <ul  {$hidden} class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{$base_url}index.php/blog">Post a new message</a>
-        </li>
-      </ul>
+
+      {if $loggedin} 
+          <ul  {$hidden} class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{$base_url}index.php/blog">Post a new message</a>
+            </li>
+          </ul>
 
 
-      <div class="dropdown" {$hidden}>
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-
+          <div class="dropdown" {$hidden}>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
               <span class="rounded-circle">
                 <img src="{$base_url}img/img.jpg" style="width:40px;" alt="User Image">
               </span>
     {$username}
-        </button>
-        <div class="dropdown-menu dropdown-menu-right">
-          <a class="dropdown-item" href="#">Profile</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="logout_action.php">Log Out</a>
-        </div>
-      </div> 
-      <ul class="navbar-nav" {$hidden2}>
-        <li class="nav-item">
-          <a class="nav-link" href="{$base_url}index.php/blog/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{$base_url}index.php/blog/register">Register</a>
-        </li>
-      </ul>
-      
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">Profile</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="logout_action.php">Log Out</a>
+            </div>
+          </div> 
+      {else}
+        <ul class="navbar-nav" {$hidden2}>
+          <li class="nav-item">
+            <a class="nav-link" href="{$base_url}index.php/blog/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{$base_url}index.php/blog/register">Register</a>
+          </li>
+        </ul>
+      {/if}
     </nav>
  
     <br>

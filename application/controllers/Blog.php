@@ -17,21 +17,18 @@
 
             $this->load->library('form_validation');
 		}
+		public function is_loggedin(){
+			return isset($this->session->userId)&&isset($this->session->user);
+		}
 		public function index()
 		{
-			if(isset($this->session->userId)&&isset($this->session->user)){
-			$data['hidden'] = '';
-			$data['hidden2'] = 'hidden';
-			$data['username'] = $this->session->user;
-			$data['id'] = $this->session->userId;
-			}else{
-				$data['hidden'] = 'hidden';
-				$data['hidden2'] = '';
+			$data['loggedin']=false;
+			if(is_loggedin()){
+				$data['username'] = $this->session->user;
+				$data['id'] = $this->session->userId;
+				$data['loggedin']=true;
 			}
-
 			$data['base_url'] = base_url();
-			$data['USERNAME'] = '';	
-			$data['USER_ID'] = '';
 		    $data['blogs'] = $this->blog_model->get_posts();
 		    
 		    /*$data['link1']=site_url("blog/index");
