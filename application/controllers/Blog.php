@@ -75,6 +75,9 @@
 		public function check_email_exists($email_check){
 			return $this->blog_model->email_exists($email_check)==0?false:true;
 		}
+		public function logout(){
+			$this->session->sess_destroy();
+		}
 		public function login()
 		{
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email|callback_check_email_exists', array('required' => 'You must provide a %s.' ,'check_email_exists'     => 'This %s does not exist please register first.'));

@@ -34,7 +34,7 @@
             <div class="dropdown-menu dropdown-menu-right">
               <a class="dropdown-item" href="#">Profile</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="logout_action.php">Log Out</a>
+              <a class="dropdown-item" href="{$base_url}index.php/blog/logout">Log Out</a>
             </div>
           </div> 
       {else}
