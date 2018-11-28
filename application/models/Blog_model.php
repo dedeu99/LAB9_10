@@ -29,7 +29,13 @@ class Blog_model extends CI_Model {
 	}
 
 	public function getpost($postid){
-		return $this->db->where('id',$postid)->from("microposts");
+		$query_RAW = "SELECT content FROM microposts WHERE id = '$postid'";
+		$query = $this->db->query($query_RAW);
+		$arr=$query->result_array();
+		if(count($arr)==1)
+			return $arr[0];
+		else	
+			return NULL;
 	}
 }
 ?>
