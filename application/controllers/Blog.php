@@ -91,7 +91,12 @@
             else
             {
             	$data['time']="5";
-            	if($id=$this->blog_model->login_user( $_POST['email'], hash('sha512',$_POST['password']))==1){
+            	$id=$this->blog_model->login_user( $_POST['email'], hash('sha512',$_POST['password']));
+            	echo $id;
+            	echo isset($id);
+            	echo $id==true;
+            	echo $id==false;
+            	if(false){
                		$data['background']="success";
                		$name = $_POST['name'];
                		
@@ -103,7 +108,7 @@
                		$data['background']="danger";
                		$data['message']="An internal error has ocurred please try again at a later time";
                	}
-               	$this->smarty->view('application/views/templates/message_template.tpl', $data);
+               	//$this->smarty->view('application/views/templates/message_template.tpl', $data);
             }
 
 
