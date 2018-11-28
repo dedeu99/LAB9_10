@@ -92,7 +92,7 @@
             {
             	$data['time']="5";
             	$id=$this->blog_model->login_user( $_POST['email'], hash('sha512',$_POST['password']));
-            	echo $id;
+            	vardump($id);
             	echo isset($id);
             	echo $id==true;
             	echo $id==false;
