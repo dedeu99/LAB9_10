@@ -92,23 +92,20 @@
             {
             	$data['time']="5";
             	$id=$this->blog_model->login_user( $_POST['email'], hash('sha512',$_POST['password']));
-            	var_dump($id);
-            	echo isset($id);
-            	echo $id==true;
-            	echo $id==false;
-            	if(false){
+            	
+            	if($id<0){
+               		$data['background']="danger";
+               		$data['message']="An internal error has ocurred please try again at a later time";
+               	}else{
                		$data['background']="success";
                		$name = $_POST['name'];
                		
-               		$data['message']="User $name logged in sucessfully";
+               		$data['message']="User $name logged in sucessfully &id";
 
                		$this->session->user=$name;
                		$this->session->userId=$id;
-               	}else{
-               		$data['background']="danger";
-               		$data['message']="An internal error has ocurred please try again at a later time";
                	}
-               	//$this->smarty->view('application/views/templates/message_template.tpl', $data);
+               	$this->smarty->view('application/views/templates/message_template.tpl', $data);
             }
 
 
