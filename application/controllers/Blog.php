@@ -222,7 +222,7 @@
 			redirect('blog');
 		}
 		public function passwordReset(){
-			if(!$this->isloggedin())
+			if($this->isloggedin())
 				redirect('blog');
 			$this->smarty->view('application/views/templates/password_reset_template.tpl', $data);
 		}	
