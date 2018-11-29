@@ -62,7 +62,7 @@ VALUES (value1, value2, value3, ...);*/
 	public function rememberMe($id){
 		$query_RAW = "UPDATE users SET remember_digest = \"".substr(md5(time()),0,32)."\" WHERE id=$id";
 		$res= $this->db->query($query_RAW);
-		if(res)
+		if($res)
 			setcookie("rememberMe", substr(md5(time()),0,32), time() + (3600 * 24 * 30), "/"); 
 		return res;
 	}
