@@ -130,6 +130,7 @@
                		$this->session->user=$name;
                		$this->session->userId=$id;
                		$data['loggedin']=true;
+               		$data['username'] = $this->session->user;
                		$this->smarty->view('application/views/templates/message_template.tpl', $data);
                	} 
             }    
@@ -145,7 +146,7 @@
                	return;
 			}
 			$data['loggedin']=true;
-
+			$data['username'] = $this->session->user;
 			$data['action']="";
 			$data['content']="";
 			if (!empty($postid)) {
@@ -168,7 +169,6 @@
    			}
 
    			$data['base_url'] = base_url();
-   			$data['username'] = $this->session->user;
 			$data['id'] = $this->session->userId;
    			$this->smarty->view('application/views/templates/blog_template.tpl', $data);
 		}
@@ -182,6 +182,7 @@
                	return;
 			}
 			$data['loggedin']=true;
+			$data['username'] = $this->session->user;
 			$error=false;
 			if (!empty($postid)) {
 				if(!$this->blog_model->updatepost($postid,$_POST['message']))
