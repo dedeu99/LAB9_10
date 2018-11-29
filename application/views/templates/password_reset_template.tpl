@@ -37,7 +37,7 @@
     	<div class="row justify-content-center align-items-center">
         
         <div class="col-sm-4">
-          <form action="{$base_url}index.php/blog/passwordReset" method="POST" >
+          <form action="{$base_url}index.php/blog/passwordReset " method="POST" >
             <div class="form-group text-center">
               <h1>Password Reset</h1>
             </div>

@@ -68,7 +68,7 @@
 			$data['base_url'] = base_url();
             if ($this->form_validation->run() == FALSE)
             {
-            	$data['message'] = validation_errors("<br>");
+            	$data['message'] = validation_errors(' ', '<br>');
             	
             	$data['name'] = set_value('name');
             	$data['email'] = set_value('email');
@@ -112,7 +112,7 @@
 				redirect('blog');
 
 
-            $this->form_validation->set_rules('email', 'Email', 'required|valid_email|callback_check_email_exists', array('required' => 'You must provide a %s.' ,'check_email_exists'     => 'This %s does not exist please register first.'));
+            $this->form_validation->set_rules('email', 'Email', 'callback_check_email_exists|required|valid_email', array('required' => 'You must provide a %s.' ,'check_email_exists'     => 'This %s does not exist please register first.'));
             $this->form_validation->set_rules('password', 'Password', 'required|min_length[7]', array('required' => 'You must provide a %s.'));
 			
 
