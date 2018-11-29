@@ -154,9 +154,9 @@
                		return;
 				}else
 				{
-					if($post['user_id']!=$this->session->user){
+					if($post['user_id']!=$this->session->userId){
 						$u1=$post['user_id'];
-						$u2=$this->session->user;
+						$u2=$this->session->userId;
 	               		$data['message']="$u1 vs $u2 You can only edit your own posts";
 	               		$this->smarty->view('application/views/templates/message_template.tpl', $data);
 	               		return;	
