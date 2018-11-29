@@ -160,7 +160,7 @@
 	               		return;	
 					}else{
 						$data['content']=$post['content'];
-						$data['action']="/$post['id']";
+						$data['action']="/".$post['id'];
 					}
 				}
    			}
