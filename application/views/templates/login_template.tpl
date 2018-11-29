@@ -13,7 +13,7 @@
       <a class="navbar-brand" href="{$base_url}index.php/blog">
         <img src="{$base_url}img/img.jpg" style="width:40px;" alt="Logo">
       </a> 
-      <ul class="navbar-nav" {$hidden2}>
+      <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="{$base_url}index.php/blog/login">Login</a>
         </li>
