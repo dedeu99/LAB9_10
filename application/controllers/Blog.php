@@ -185,7 +185,7 @@
 			$data['username'] = $this->session->user;
 			$error=false;
 			if (!empty($postid)) {
-				if(!$this->blog_model->updatepost(trim($postid),$_POST['message']))
+				if(!$this->blog_model->updatepost($postid	,trim($_POST['message'])))
 					$error=true;
 			}else{
 				if(!$data['message']=$this->blog_model-> createpost(trim($_POST['message']),$this->session->userId))
