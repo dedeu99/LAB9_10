@@ -112,7 +112,7 @@
 				redirect('blog');
 
 
-            $this->form_validation->set_rules('email', 'Email', 'required|valid_email', array('required' => 'You must provide a %s.' ,'check_email_exists'     => 'This %s does not exist please register first.'));
+            $this->form_validation->set_rules('email', 'Email', 'required|callback_check_email_exists|valid_email', array('required' => 'You must provide a %s.' ,'check_email_exists'     => 'This %s does not exist please register first.'));
             $this->form_validation->set_rules('password', 'Password', 'required|min_length[7]', array('required' => 'You must provide a %s.'));
 			
 
