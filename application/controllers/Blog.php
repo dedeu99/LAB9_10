@@ -249,7 +249,8 @@
 				
 				
 				if($result){
-					$msg="Olá Sr.(a) $result['name']
+					$name=$result['name'];
+					$msg="Olá Sr.(a) $name
 				Para obter uma nova password clique no link
 
 				http://all.deei.fct.ualg.pt/~a62362/LAB8/new_password.php?token=$reset_digest
