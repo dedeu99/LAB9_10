@@ -149,7 +149,7 @@
           <div class="col-sm-9">
             {if $id!=0 and $id==$blog.user_id}  
             <div  class="row justify-content-sm-end">
-              <a href="blog.php?POST_ID={$blog.id}"><button  class="btn btn-secondary">
+              <a href="{$base_url}index.php/blog/updatepost/{$blog.id}"><button  class="btn btn-secondary">
                 Update
               </button></a>
             </div>
