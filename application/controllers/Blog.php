@@ -245,7 +245,7 @@
             	$time=time();
 				$reset_digest = substr(md5($time),0,32);
 				
-				$result = emailUser($reset_digest,$email);
+				$result = $this->blog_model->emailUser($reset_digest,$email);
 				
 				
 				if($result){
