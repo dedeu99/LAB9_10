@@ -82,5 +82,13 @@ VALUES (value1, value2, value3, ...);*/
 		else	
 			return NULL;
 	}
+
+	public function emailUser($reset_digest,$email){
+
+		$query_RAW = "UPDATE users SET reset_digest='$reset_digest', reset_sent_at='".date("Y-m-d H:i:s")."' WHERE email='$email'";
+		$res= $this->db->query($query_RAW);
+		return $res;
+		
+	}
 }
 ?>

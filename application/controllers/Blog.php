@@ -226,7 +226,56 @@
 				redirect('blog');
 			$data['message']='';
 			$data['base_url'] = base_url();
-			$this->smarty->view('application/views/templates/password_reset_template.tpl', $data);
+
+
+			$this->form_validation->set_rules('email', 'Email', 'required|valid_email|callback_check_email_exists', array('required' => 'You must provide a %s.' ,'check_email_exists'     => 'This %s does not exist please register first.'));
+
+			$data['base_url'] = base_url();
+            if ($this->form_validation->run() == FALSE)
+            {
+            	$data['message'] = validation_errors("<br>");
+            	
+            	$data['email'] = set_value('email');
+
+				$this->smarty->view('application/views/templates/password_reset_template.tpl', $data);
+            }
+            else
+            {
+            	$time=time();
+				$reset_digest = substr(md5($time),0,32);
+				
+				$result = emailUser($reset_digest,$email);
+				
+				
+				if($result){
+					$msg="Olá Sr.(a) $name
+				Para obter uma nova password clique no link
+
+				http://all.deei.fct.ualg.pt/~a62362/LAB8/new_password.php?token=$reset_digest
+
+				Este link tem a validade de uma hora.
+				Se NÃO pediu uma nova password IGNORE este email.
+
+
+				Cumprimentos,
+				webmaster!
+				Página Web: http://intranet.deei.fct.ualg.pt/~a62362/Lab8/
+				E-mail: a62362@deei.fct.ualg.pt
+				NOTA: Não responda a este email, não vai obter resposta!";
+
+
+
+				mail($email,"Password Reset",$msg);
+				$data['background']="success";
+				$data['message']="Password reset activated! <br> Email sent to you :-)";
+				$this->smarty->view('application/views/templates/message_template.tpl', $data);
+				
+				}else{
+					$data['background']="danger";
+					$data['message']="An error has ocorred please try again later";
+					$this->smarty->view('application/views/templates/message_template.tpl', $data);
+				}
+			}
 		}	
 	}
 ?> 
