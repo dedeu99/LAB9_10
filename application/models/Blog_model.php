@@ -69,6 +69,7 @@ VALUES (value1, value2, value3, ...);*/
 
 	public function forgetMe(){
 		unset($_COOKIE['rememberMe']);
+		setcookie('rememberMe', '', time() - 3600, '/');
 	}
 
 	public function relogin($digest){

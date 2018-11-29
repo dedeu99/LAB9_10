@@ -24,12 +24,7 @@
 		{
 			$data['loggedin']=false;
 
-			if($this->isloggedin()){
-					$data['username'] = $this->session->user;
-					$data['id'] = $this->session->userId;
-					$data['loggedin']=true;
-			}else
-				if(isset($_COOKIE["rememberMe"])) {
+			if(isset($_COOKIE["rememberMe"])) {
 					$user=$this->blog_model->relogin($_COOKIE["rememberMe"]);
 					if(!is_null($user)){
 						$this->session->user=$user['name'];
@@ -38,7 +33,13 @@
 						$data['id'] = $user['id'];;
 						$data['loggedin']=true;
 					}
-				}			
+			}else
+				if($this->isloggedin()){
+					$data['username'] = $this->session->user;
+					$data['id'] = $this->session->userId;
+					$data['loggedin']=true;
+				}
+							
 			$data['base_url'] = base_url();
 		    $data['blogs'] = $this->blog_model->get_posts();
 		    
