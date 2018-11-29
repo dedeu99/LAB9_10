@@ -43,7 +43,7 @@ SET column1 = value1, column2 = value2, ...
 WHERE condition;*/
 	public function updatepost($postid,$content){
 		$query_RAW = "UPDATE microposts SET content='$content', updated_at=NOW() where id = $postid";
-		return $this->db->query($query_RAW);
+		return $this->db->query($query_RAW)->num_rows();
 	}
 
 	/*INSERT INTO table_name (column1, column2, column3, ...)
