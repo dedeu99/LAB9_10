@@ -181,10 +181,10 @@
 			$error=false;
 			if (!empty($postid)) {
 				if(!$this->blog_model->updatepost($postid,$_POST['message']))
-					error=true;
+					$error=true;
 			}else{
 				if(!$data['message']=$this->blog_model-> createpost($_POST['message'],$this->session->userId))
-					error=true;
+					$error=true;
 			}
 
 			if($error){
