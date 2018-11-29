@@ -161,7 +161,7 @@
 	               		$this->smarty->view('application/views/templates/message_template.tpl', $data);
 	               		return;	
 					}else
-						$data['content']=$content;
+						$data['content']=$post['content'];
 				}
    			}
 
