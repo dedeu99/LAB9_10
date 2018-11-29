@@ -27,7 +27,15 @@
           <div class="dropdown" >
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
               <span class="rounded-circle">
-                <img src="{$base_url}img/img.jpg" style="width:40px;" alt="User Image">
+                <img 
+                {if file_exists("img/user{$id}.jpg")} 
+                {assign "imgpath" "img/user{$id}.jpg"} 
+                
+                  src="{$base_url}{$imgpath}"
+                {else} 
+                  src="{$base_url}img/user.jpg" 
+                {/if}
+                 style="width:40px;" alt="User Image">
               </span>
     {$username}
             </button>
