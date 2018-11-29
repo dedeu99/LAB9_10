@@ -43,7 +43,7 @@ SET column1 = value1, column2 = value2, ...
 WHERE condition;*/
 	public function updatepost($postid,$content){
 		$query_RAW = "UPDATE microposts SET content='$content', updated_at=NOW() where id = $postid";
-		return $this->db->query($query_RAW)->num_rows();
+		return $this->db->query($query_RAW);
 	}
 
 	/*INSERT INTO table_name (column1, column2, column3, ...)
@@ -52,7 +52,7 @@ VALUES (value1, value2, value3, ...);
 INSERT INTO table_name
 VALUES (value1, value2, value3, ...);*/
 	public function createpost($content,$userid){
-		$query_RAW = "INSERT INTO microposts VALUES ('$content',$userid,NOW(),NOW())";
+		$query_RAW = "INSERT INTO microposts (content,user_id,created_at,updated_at) VALUES ('$content',$userid,NOW(),NOW())";
 		$query = $this->db->query($query_RAW);
 		return $query->result_array();
 	}

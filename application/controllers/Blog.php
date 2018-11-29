@@ -180,7 +180,7 @@
 			}
 
 			if (!empty($postid)) {
-				$data['message']=$this->blog_model->updatepost($postid,$_POST['message']);
+				$this->blog_model->updatepost($postid,$_POST['message']);
 			}else{
 				$data['message']=$this->blog_model-> createpost($_POST['message'],$this->session->userId);
 			}
