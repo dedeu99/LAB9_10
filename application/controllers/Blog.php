@@ -224,6 +224,7 @@
 		public function passwordReset(){
 			if($this->isloggedin())
 				redirect('blog');
+			$data;
 			$this->smarty->view('application/views/templates/password_reset_template.tpl', $data);
 		}	
 	}
