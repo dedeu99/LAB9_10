@@ -150,18 +150,19 @@
 					$data['background']="danger";
                		$data['message']="The selected post does not exist";
                		$this->smarty->view('application/views/templates/message_template.tpl', $data);
-               		die();
+               		return;
 				}else
 				{
 					$data['content']=$content;
 				}
 				
    			}
-   				
+
    			$data['base_url'] = base_url();
    			$data['username'] = $this->session->user;
 			$data['id'] = $this->session->userId;
    			$this->smarty->view('application/views/templates/blog_template.tpl', $data);
+   				
 		}
 	}
 ?> 
