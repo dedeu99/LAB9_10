@@ -154,7 +154,7 @@
                		return;
 				}else
 				{
-					if($post['user']!=$this->session->user){
+					if($post['userid']!=$this->session->user){
 	               		$data['message']="You can only edit your own posts";
 	               		$this->smarty->view('application/views/templates/message_template.tpl', $data);
 	               		return;	
