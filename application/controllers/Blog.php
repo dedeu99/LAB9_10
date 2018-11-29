@@ -144,7 +144,7 @@
 			}
 
 
-
+			$data['action']="";
 			$data['content']="";
 			if (!empty($postid)) {
 				$post=$this->blog_model->getpost($postid);
@@ -158,8 +158,10 @@
 	               		$data['message']="You can only edit your own posts";
 	               		$this->smarty->view('application/views/templates/message_template.tpl', $data);
 	               		return;	
-					}else
+					}else{
 						$data['content']=$post['content'];
+						$data['action']="/$post['id']";
+					}
 				}
    			}
 

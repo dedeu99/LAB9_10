@@ -42,7 +42,7 @@
  
     <br>
     <div class="container shadow ">
-      <form action="{$base_url}index.php/blog/updatepost" method="post">
+      <form action="{$base_url}index.php/blog/updatepost{$action}" method="post">
         <div class="form-group text-center">
           <div class="row justify-content-center align-items-center">  
             <div class="col-sm-8">
