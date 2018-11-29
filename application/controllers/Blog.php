@@ -89,6 +89,7 @@
             }
 		}
 		public function check_email_exists($email_check){
+			$this->form_validation->set_message('check_email_exists' , 'This {field} does not exist please register first.');
 			return $this->blog_model->email_exists($email_check)==0?false:true;
 		}
 
@@ -112,7 +113,7 @@
 				redirect('blog');
 
 
-            $this->form_validation->set_rules('email', 'Email', 'valid_email|callback_check_email_exists|required', array('required' => 'You must provide a %s.' ,'check_email_exists'     => 'This %s does not exist please register first.'));
+            $this->form_validation->set_rules('email', 'Email', 'valid_email|callback_check_email_exists|required', array('required' => 'You must provide a %s.' );
             $this->form_validation->set_rules('password', 'Password', 'required|min_length[7]', array('required' => 'You must provide a %s.'));
 			
 
