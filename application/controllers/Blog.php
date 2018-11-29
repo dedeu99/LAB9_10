@@ -225,6 +225,7 @@
 			if($this->isloggedin())
 				redirect('blog');
 			$data['message']='';
+			$data['base_url'] = base_url();
 			$this->smarty->view('application/views/templates/password_reset_template.tpl', $data);
 		}	
 	}
