@@ -135,10 +135,12 @@
 		}
 		public function post($postid = '')
 		{
+			$data['base_url'] = base_url();
 			if(!$this->isloggedin()){
 				$data['background']="danger";
                	$data['message']="You need to login before posting";
                	$this->smarty->view('application/views/templates/message_template.tpl', $data);
+               	return;
 			}
 
 
