@@ -101,10 +101,7 @@
 	   		$name = $this->session->user;
 	   		$data['message']="User $name logged out sucessfully";
 	   		$data['loggedin']=false;
-	   		if (isset($_COOKIE[session_name()])) 
-		  	{
-		  	  setcookie(session_name(), '', time()-42000, '/');
-		  	}
+	   		$this->blog_model->forgetMe();
 	   		$this->session->sess_destroy();
 	   		$this->smarty->view('application/views/templates/message_template.tpl', $data);
 			
