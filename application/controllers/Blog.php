@@ -113,7 +113,7 @@
 				redirect('blog');
 
 
-            $this->form_validation->set_rules('email', 'Email', 'valid_email|callback_check_email_exists|required', array('required' => 'You must provide a %s.' ));
+            $this->form_validation->set_rules('email', 'Email', 'required|valid_email|callback_check_email_exists', array('required' => 'You must provide a %s.' ));
             $this->form_validation->set_rules('password', 'Password', 'required|min_length[7]', array('required' => 'You must provide a %s.'));
 			
 
