@@ -136,8 +136,8 @@
 		public function post($postid = '')
 		{
 			$data['base_url'] = base_url();
+			$data['background']="danger";
 			if(!$this->isloggedin()){
-				$data['background']="danger";
                	$data['message']="You need to login before posting";
                	$this->smarty->view('application/views/templates/message_template.tpl', $data);
                	return;
@@ -147,17 +147,20 @@
 
 			$data['content']="creating a new post";
 			if (!empty($postid)) {
-				$content=$this->blog_model->getpost($postid)['content'];
-				if(is_null($content)){
-					$data['background']="danger";
+				$post=$this->blog_model->getpost($postid);
+				if(is_null($post)){
                		$data['message']="The selected post does not exist";
                		$this->smarty->view('application/views/templates/message_template.tpl', $data);
                		return;
 				}else
 				{
-					$data['content']=$content;
+					if($post['user']!=$this->session->user){
+	               		$data['message']="You can only edit your own posts";
+	               		$this->smarty->view('application/views/templates/message_template.tpl', $data);
+	               		return;	
+					}else
+						$data['content']=$content;
 				}
-				
    			}
 
    			$data['base_url'] = base_url();

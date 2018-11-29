@@ -29,7 +29,7 @@ class Blog_model extends CI_Model {
 	}
 
 	public function getpost($postid){
-		$query_RAW = "SELECT content FROM microposts WHERE id = '$postid'";
+		$query_RAW = "SELECT * FROM microposts WHERE id = '$postid'";
 		$query = $this->db->query($query_RAW);
 		$arr=$query->result_array();
 		if(count($arr)==1)
