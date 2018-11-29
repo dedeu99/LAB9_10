@@ -58,5 +58,29 @@ VALUES (value1, value2, value3, ...);*/
 		$query_RAW = "INSERT INTO microposts (content,user_id,created_at,updated_at) VALUES ('$content',$userid,NOW(),NOW())";
 		return $this->db->query($query_RAW);
 	}
+
+	public function rememberMe($id){
+		$query_RAW = "UPDATE users SET remember_digest = \"".substr(md5(time()),0,32)."\" WHERE id=$id";
+		$res= $this->db->query($query_RAW);
+		if(res)
+			setcookie("rememberMe", substr(md5(time()),0,32), time() + (3600 * 24 * 30), "/"); 
+		return res;
+	}
+
+	public function forgetMe(){
+		unset($_COOKIE['rememberMe']);
+		setcookie('rememberMe', '', time() - 3600, '/');
+	}
+
+	public function relogin($digest){
+
+		$query_RAW = "SELECT id,name FROM users WHERE remember_digest='$digest'";
+		$query = $this->db->query($query_RAW);
+		$arr=$query->result_array();
+		if(count($arr)==1)
+			return $arr[0];
+		else	
+			return NULL;
+	}
 }
 ?>

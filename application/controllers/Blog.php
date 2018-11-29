@@ -23,11 +23,22 @@
 		public function index()
 		{
 			$data['loggedin']=false;
+
 			if($this->isloggedin()){
-				$data['username'] = $this->session->user;
-				$data['id'] = $this->session->userId;
-				$data['loggedin']=true;
-			}
+					$data['username'] = $this->session->user;
+					$data['id'] = $this->session->userId;
+					$data['loggedin']=true;
+			}else
+				if(isset($_COOKIE["rememberMe"])) {
+					$user=$this->blog_model->relogin($_COOKIE["rememberMe"]);
+					if(!is_null($user)){
+						$this->session->user=$user['name'];
+						$data['username'] = $user['name'];
+						$this->session->userId = $user['id'];
+						$data['id'] = $user['id'];;
+						$data['loggedin']=true;
+					}
+				}			
 			$data['base_url'] = base_url();
 		    $data['blogs'] = $this->blog_model->get_posts();
 		    
@@ -89,6 +100,10 @@
 	   		$name = $this->session->user;
 	   		$data['message']="User $name logged out sucessfully";
 	   		$data['loggedin']=false;
+	   		if (isset($_COOKIE[session_name()])) 
+		  	{
+		  	  setcookie(session_name(), '', time()-42000, '/');
+		  	}
 	   		$this->session->sess_destroy();
 	   		$this->smarty->view('application/views/templates/message_template.tpl', $data);
 			
@@ -131,6 +146,16 @@
                		$this->session->userId=$id;
                		$data['loggedin']=true;
                		$data['username'] = $this->session->user;
+
+               		if(isset($_POST['autologin'])){
+               			$this->blog_model->rememberMe($id);
+			 		}else{
+			 			$this->blog_model->forgetMe();
+					}
+
+
+
+
                		$this->smarty->view('application/views/templates/message_template.tpl', $data);
                	} 
             }    
