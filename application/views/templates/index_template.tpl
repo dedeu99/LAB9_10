@@ -155,7 +155,7 @@
             </div>
             {/if}
             <div class="row align-items-center">
-              <p>{$blog.content}</p>
+              <p>{nl2br($blog.content)}</p>
             </div>
             
           </div>

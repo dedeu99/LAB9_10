@@ -185,10 +185,10 @@
 			$data['username'] = $this->session->user;
 			$error=false;
 			if (!empty($postid)) {
-				if(!$this->blog_model->updatepost($postid,nl2br($_POST['message'])))
+				if(!$this->blog_model->updatepost($postid,$_POST['message']))
 					$error=true;
 			}else{
-				if(!$data['message']=$this->blog_model-> createpost(nl2br($_POST['message']),$this->session->userId))
+				if(!$data['message']=$this->blog_model-> createpost($_POST['message'],$this->session->userId))
 					$error=true;
 			}
 			if($error){
