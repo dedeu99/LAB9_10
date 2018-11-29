@@ -150,6 +150,7 @@
 					$data['background']="danger";
                		$data['message']="The selected post does not exist";
                		$this->smarty->view('application/views/templates/message_template.tpl', $data);
+               		die();
 				}else
 				{
 					$data['content']=$content;
