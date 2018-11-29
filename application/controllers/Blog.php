@@ -72,7 +72,7 @@
                		$data['background']="danger";
                		$data['message']="An internal error has ocurred please try again at a later time";
                	}	
-
+               	$data['loggedin']=false;
                	$this->smarty->view('application/views/templates/message_template.tpl', $data);
             }
 		}
@@ -88,7 +88,7 @@
 	   		$data['background']="success";
 	   		$name = $this->session->user;
 	   		$data['message']="User $name logged out sucessfully";
-
+	   		$data['loggedin']=false;
 	   		$this->session->sess_destroy();
 	   		$this->smarty->view('application/views/templates/message_template.tpl', $data);
 			
@@ -129,6 +129,7 @@
 
                		$this->session->user=$name;
                		$this->session->userId=$id;
+               		$data['loggedin']=true;
                		$this->smarty->view('application/views/templates/message_template.tpl', $data);
                	} 
             }    
@@ -137,12 +138,13 @@
 		{
 			$data['base_url'] = base_url();
 			$data['background']="danger";
+			$data['loggedin']=false;
 			if(!$this->isloggedin()){
                	$data['message']="You need to login before posting";
                	$this->smarty->view('application/views/templates/message_template.tpl', $data);
                	return;
 			}
-
+			$data['loggedin']=true;
 
 			$data['action']="";
 			$data['content']="";
@@ -173,11 +175,13 @@
 		public function updatepost($postid = ''){
 			$data['base_url'] = base_url();
 			$data['background']="danger";
+			$data['loggedin']=false;
 			if(!$this->isloggedin()){
                	$data['message']="You need to login before posting";
                	$this->smarty->view('application/views/templates/message_template.tpl', $data);
                	return;
 			}
+			$data['loggedin']=true;
 			$error=false;
 			if (!empty($postid)) {
 				if(!$this->blog_model->updatepost($postid,$_POST['message']))
@@ -186,15 +190,12 @@
 				if(!$data['message']=$this->blog_model-> createpost($_POST['message'],$this->session->userId))
 					$error=true;
 			}
-
 			if($error){
 				$data['message']="A database error ocurred please try again later";
                	$this->smarty->view('application/views/templates/message_template.tpl', $data);
                	return;
 			}
-
 			redirect('blog');
-			   	
 		}
 	}
 ?> 

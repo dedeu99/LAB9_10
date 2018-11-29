@@ -14,15 +14,45 @@
       <a class="navbar-brand" href="{$base_url}index.php/blog">
         <img src="{$base_url}img/img.jpg" style="width:40px;" alt="Logo">
       </a>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="{$base_url}index.php/blog/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{$base_url}index.php/blog/register">Register</a>
-        </li>
-      </ul>
-      
+      {if $loggedin} 
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{$base_url}index.php/blog/post">Post a new message</a>
+            </li>
+          </ul>
+
+
+          <div class="dropdown" >
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+              <span class="rounded-circle">
+                <img 
+                {if file_exists("img/user{$id}.jpg")} 
+                {assign "imgpath" "img/user{$id}.jpg"} 
+                
+                  src="{$base_url}{$imgpath}"
+                {else} 
+                  src="{$base_url}img/user.jpg" 
+                {/if}
+                 style="width:40px;" alt="User Image">
+              </span>
+    {$username}
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">Profile</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{$base_url}index.php/blog/logout">Log Out</a>
+            </div>
+          </div> 
+      {else}
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{$base_url}index.php/blog/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{$base_url}index.php/blog/register">Register</a>
+          </li>
+        </ul>
+      {/if}
     </nav>  
  
     <br>
