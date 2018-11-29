@@ -53,8 +53,7 @@ INSERT INTO table_name
 VALUES (value1, value2, value3, ...);*/
 	public function createpost($content,$userid){
 		$query_RAW = "INSERT INTO microposts (content,user_id,created_at,updated_at) VALUES ('$content',$userid,NOW(),NOW())";
-		$query = $this->db->query($query_RAW);
-		return $query->result_array();
+		return $this->db->query($query_RAW);
 	}
 }
 ?>
