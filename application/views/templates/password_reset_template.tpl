@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LAB9_10</title>
+    <title>LAB5</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -10,15 +10,15 @@
   
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between">
-      <a class="navbar-brand" href="{$base_url}index.php/blog">
-        <img src="{$base_url}img/img.jpg" style="width:40px;" alt="Logo">
+      <a class="navbar-brand" href="index.php">
+        <img src="img/img.jpg" style="width:40px;" alt="Logo">
       </a> 
-      <ul class="navbar-nav" {$hidden2}>
+      <ul class="navbar-nav" {hidden2}>
         <li class="nav-item">
-          <a class="nav-link" href="{$base_url}index.php/blog/login">Login</a>
+          <a class="nav-link" href="login.php">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{$base_url}index.php/blog/register">Register</a>
+          <a class="nav-link" href="register.php">Register</a>
         </li>
       </ul>
       
@@ -27,40 +27,33 @@
     <br>
 
     <div class="container shadow ">
-      <!-- BEGIN LOGINFORM -->
+      <!-- BEGIN RESETFORM -->
+
       {if $message|count_characters:true>0}
-      <div class="row justify-content-center bg-danger text-white">
-        {$message}
-      </div>
+        <div class="row justify-content-center bg-danger text-white">
+          {$message}
+        </div>
       {/if}
     	<div class="row justify-content-center align-items-center">
         
         <div class="col-sm-4">
-          <form action="{$base_url}index.php/blog/login" method="POST" >
+          <form action="password_reset_action.php" method="POST" >
             <div class="form-group text-center">
-              <h1>Login</h1>
-            </div>
-            <div class="form-group">
-              <label for="emailfield"><sub>Email</sub></label>
-              <input type="email" id="emailfield" class="form-control" name="email" value={$email}>
+              <h1>Password Reset</h1>
             </div>
 
             <div class="form-group">
-              <label for="passwordfield"><sub>Password</sub></label>
-              <input type="password" id="passwordfield" name="password" class="form-control" >
+              <label for="email"><sub>Email</sub></label>
+              <input type="email" id="email" name="email" class="form-control" >
             </div>
             <div class="form-group text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Go</button>
               
-              <small class="form-text">
-                Remember me:<input type="checkbox" name="autologin" value="1">
-                <a href="{$base_url}index.php/blog/passwordReset">forgot password?</a>
-              </small>
             </div>
           </form>
         </div>
       </div>
-    <!-- END LOGINFORM -->
+    <!-- END RESETFORM -->
       
     </div>
       
