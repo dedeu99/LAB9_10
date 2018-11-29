@@ -180,7 +180,7 @@
 			if (!empty($postid)) {
 				$data['message']=$this->blog_model->updatepost($postid,$_POST['message']);
 			}else{
-				$data['message']=$this->blog_model-> createpost($_POST['message'],$this->session->userId)
+				$data['message']=$this->blog_model-> createpost($_POST['message'],$this->session->userId);
 			}
 
 			$this->smarty->view('application/views/templates/message_template.tpl', $data);   	
