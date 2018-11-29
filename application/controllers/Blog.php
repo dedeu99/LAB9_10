@@ -168,5 +168,22 @@
 			$data['id'] = $this->session->userId;
    			$this->smarty->view('application/views/templates/blog_template.tpl', $data);
 		}
+		public function updatepost($postid = ''){
+			$data['base_url'] = base_url();
+			$data['background']="danger";
+			if(!$this->isloggedin()){
+               	$data['message']="You need to login before posting";
+               	$this->smarty->view('application/views/templates/message_template.tpl', $data);
+               	return;
+			}
+
+			if (!empty($postid)) {
+				$data['message']=$this->blog_model->updatepost($postid,$_POST['message']);
+			}else{
+				$data['message']=$this->blog_model-> createpost($_POST['message'],$this->session->userId)
+			}
+
+			$this->smarty->view('application/views/templates/message_template.tpl', $data);   	
+		}
 	}
 ?> 
