@@ -145,7 +145,7 @@
 
 
 
-			$data['content']="creating a new post";
+			$data['content']="";
 			if (!empty($postid)) {
 				$post=$this->blog_model->getpost($postid);
 				if(is_null($post)){
@@ -155,9 +155,7 @@
 				}else
 				{
 					if($post['user_id']!=$this->session->userId){
-						$u1=$post['user_id'];
-						$u2=$this->session->userId;
-	               		$data['message']="$u1 vs $u2 You can only edit your own posts";
+	               		$data['message']="You can only edit your own posts";
 	               		$this->smarty->view('application/views/templates/message_template.tpl', $data);
 	               		return;	
 					}else
@@ -169,7 +167,6 @@
    			$data['username'] = $this->session->user;
 			$data['id'] = $this->session->userId;
    			$this->smarty->view('application/views/templates/blog_template.tpl', $data);
-   				
 		}
 	}
 ?> 
