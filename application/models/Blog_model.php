@@ -6,7 +6,20 @@ class Blog_model extends CI_Model {
 	}
 	public function get_posts()
 	{
-		$query_RAW = "SELECT * FROM microposts ORDER BY created_at DESC";
+		$query_RAW = //"SELECT * FROM microposts ORDER BY created_at DESC";
+
+		"SELECT microposts.id, content, user_id,microposts.created_at,microposts.updated_at,name FROM microposts join users on user_id==users.id ORDER BY created_at DESC";
+
+
+
+
+
+
+
+
+
+
+
 		$query = $this->db->query($query_RAW);
 		return $query->result_array();	
 	}

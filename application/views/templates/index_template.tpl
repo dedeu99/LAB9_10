@@ -147,7 +147,7 @@
             <p>{$blog.updated_at}</p>
           </div>
           <div class="col-sm-9">
-            {if $session_id!=0 and $session_id==$blog.user_id}  
+            {if $id!=0 and $id==$blog.user_id}  
             <div  class="row justify-content-sm-end">
               <a href="blog.php?POST_ID={$blog.id}"><button  class="btn btn-secondary">
                 Update
