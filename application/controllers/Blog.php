@@ -178,14 +178,23 @@
                	$this->smarty->view('application/views/templates/message_template.tpl', $data);
                	return;
 			}
-
+			$error=false;
 			if (!empty($postid)) {
-				$this->blog_model->updatepost($postid,$_POST['message']);
+				if(!$this->blog_model->updatepost($postid,$_POST['message']))
+					error=true;
 			}else{
-				$data['message']=$this->blog_model-> createpost($_POST['message'],$this->session->userId);
+				if(!$data['message']=$this->blog_model-> createpost($_POST['message'],$this->session->userId))
+					error=true;
 			}
 
-			$this->smarty->view('application/views/templates/message_template.tpl', $data);   	
+			if($error){
+				$data['message']="A database error ocurred please try again later";
+               	$this->smarty->view('application/views/templates/message_template.tpl', $data);
+               	return;
+			}
+
+			redirect('blog');
+			   	
 		}
 	}
 ?> 
