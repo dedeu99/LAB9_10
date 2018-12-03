@@ -148,7 +148,7 @@
           </div>
           <div class="col-sm-9">
             {if $id!=0}  
-            <div  class="row w-25 justify-content-sm-end">
+            <div  class="row h-25 justify-content-sm-end">
               
 
               
@@ -166,7 +166,7 @@
 
 
             {/if}
-            <div class="row w-75 align-items-center">
+            <div class="row h-75 align-items-center">
               <p>{nl2br($blog.content)}</p>
 
 
