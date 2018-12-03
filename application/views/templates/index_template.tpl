@@ -147,10 +147,15 @@
             <p>{$blog.updated_at}</p>
           </div>
           <div class="col-sm-9">
-            {if $id!=0 and $id==$blog.user_id}  
+            {if $id!=0}  
             <div  class="row justify-content-sm-end">
               <a href="{$base_url}index.php/blog/post/{$blog.id}"><button  class="btn btn-secondary">
+                {if $id==$blog.user_id}
                 Update
+                {else}
+                Reply
+                {/if}
+                }
               </button></a>
             </div>
             {/if}

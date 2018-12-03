@@ -76,7 +76,7 @@
             }
             else
             {
-            	if($this->blog_model->set_user( $_POST['name'], $_POST['email'], hash('sha512',$_POST['password']))==1){
+            	if($this->blog_model->register_user( $_POST['name'], $_POST['email'], hash('sha512',$_POST['password']))==1){
                		$data['background']="success";
                		$name = $_POST['name'];
                		$data['message']="User $name created sucessfully";
@@ -130,7 +130,7 @@
             else
             {
             	
-            	$user=$this->blog_model->login_user( $_POST['email'], hash('sha512',$_POST['password']));
+            	$user=$this->blog_model->validate_user( $_POST['email'], hash('sha512',$_POST['password']));
 				if(is_null($user)){  		
                		$data['message']="The password entered does not match";
                		$data['email'] = set_value('email');
@@ -182,8 +182,9 @@
 				}else
 				{
 					if($post['user_id']!=$this->session->userId){
-	               		$data['message']="You can only edit your own posts";
-	               		$this->smarty->view('application/views/templates/message_template.tpl', $data);
+	               		/*$data['message']="You can only edit your own posts";
+	               		$this->smarty->view('application/views/templates/message_template.tpl', $data);*/
+	               		$blog_model->new_reply($blog_id);
 	               		return;	
 					}else{
 						$data['content']=$post['content'];
