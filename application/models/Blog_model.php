@@ -11,13 +11,7 @@ class Blog_model extends CI_Model {
 		"SELECT microposts.id, content, user_id,microposts.created_at,microposts.updated_at,name FROM microposts join users on user_id=users.id ORDER BY created_at DESC";
 
 		$query = $this->db->query($query_RAW);
-		/*$arr=$query->result_array();
-		for($i=0;$i<count($arr);++$i){
-			$arr[$i]['replies']=$this->get_replies($arr[$i]['id']);
-			//var_dump($arr[$i]);
-			//echo(PHP_EOL);
-		}
-		return $arr;	*/
+		
 		return $query->result_array();
 	}
 	public function register_user($name,$email,$password){
