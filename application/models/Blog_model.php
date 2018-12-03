@@ -13,7 +13,7 @@ class Blog_model extends CI_Model {
 		$query = $this->db->query($query_RAW);
 		$arr=$query->result_array();
 		for($i=0;$i<count($arr);++$i){
-			$arr[$i][replies]="I have a reply";
+			$arr[$i]['replies']="I have a reply";
 			var_dump($arr[$i]);
 			echo(PHP_EOL);
 		}
