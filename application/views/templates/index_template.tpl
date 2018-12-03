@@ -122,7 +122,7 @@
 
 {foreach $blogs as $blog}
         <div class="row" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
-          <div class="col-sm-3 text-center align-items-center"  >
+          <div class="col-sm-3 text-center my-auto"  >
             <br>
             <a>
               <span class="rounded-circle">
