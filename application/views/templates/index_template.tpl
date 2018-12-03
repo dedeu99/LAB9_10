@@ -188,7 +188,7 @@
 
 
               <div class="row justify-content-end" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
-          <div class="col-sm-3 .offset-sm-9 text-center"  >
+          <div class="col-sm-3text-center"  >
             <br>
             <a>
               <span class="rounded-circle">
@@ -212,7 +212,7 @@
             <p>Updated:</p>
             <p>{$reply.updated_at}</p>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-8">
             {if $id!=0}  
             <div  class="row justify-content-sm-end">
               
