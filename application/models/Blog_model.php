@@ -11,7 +11,16 @@ class Blog_model extends CI_Model {
 		"SELECT microposts.id, content, user_id,microposts.created_at,microposts.updated_at,name FROM microposts join users on user_id=users.id ORDER BY created_at DESC";
 
 		$query = $this->db->query($query_RAW);
-		return $query->result_array();	
+		$arr=$query->result_array();
+		for($i=0;$i<count($arr);++$i){
+			$arr[$i]['replies']=$this->get_replies($arr[$i]['id']);
+			//var_dump($arr[$i]);
+			//echo(PHP_EOL);
+		}
+		return $arr;
+
+
+
 	}
 	public function register_user($name,$email,$password){
 		$query_RAW = "INSERT INTO users (name,email,created_at,updated_at,password_digest,remember_digest,admin) VALUES ('$name','$email',NOW(),NOW(),'$password',NULL,0)";
@@ -94,6 +103,17 @@ VALUES (value1, value2, value3, ...);*/
 		
 	}
 
+	public function new_reply($blog_id)
+	{
 	
+	
+	
+	}
+	public function get_replies($id)
+	{
+		$sql="select * from replies where replies.micropost_id=$id order by replies.created_at desc";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
 }
 ?>
