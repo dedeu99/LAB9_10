@@ -101,18 +101,7 @@ VALUES (value1, value2, value3, ...);*/
 		
 	}
 
-	public function new_reply($blog_id)
-	{
-	
-	
-	
-	}
-	public function get_replies($id)
-	{
-		$sql="select * from replies where replies.micropost_id=$id order by replies.created_at desc";
-		$query = $this->db->query($sql);
-		return $query->result_array();
-	}
+
 
 }
 ?>
