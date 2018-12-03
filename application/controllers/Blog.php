@@ -5,14 +5,18 @@
 		public function __construct()
 		{
 			parent::__construct();
+			
+			error_reporting(E_ALL);
+			ini_set('display_errors', 1);
+
+
 			$this->load->model('blog_model');
 
 			//$this->load->helper('url_helper');
 			$this->load->helper('url');
 			$this->load->library('session');
 
-
-
+			
 			//$this->load->helper(array('form', 'url'));
 
             $this->load->library('form_validation');
