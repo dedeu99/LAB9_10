@@ -253,9 +253,7 @@
 
 
 
-
-              <p>{nl2br($reply.content)}</p>              
-              {/foreach}        
+  
 
             </div>
             
