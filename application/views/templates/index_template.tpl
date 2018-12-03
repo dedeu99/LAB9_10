@@ -146,9 +146,9 @@
             <p>Updated:</p>
             <p>{$blog.updated_at}</p>
           </div>
-          <div class="col-sm-9 my-auto">
+          <div class="col-sm-9">
             {if $id!=0}  
-            <div  class="row justify-content-sm-end">
+            <div  class="row w-25 justify-content-sm-end">
               
 
               
@@ -166,7 +166,7 @@
 
 
             {/if}
-            <div class="row">
+            <div class="row w-75 align-items-center">
               <p>{nl2br($blog.content)}</p>
 
 
