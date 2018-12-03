@@ -162,10 +162,6 @@
             <div class="row align-items-center">
               <p>{nl2br($blog.content)}</p>
 
-              {foreach $blogs.replies as $reply}
-              <p>{nl2br($reply.content)}</p>              
-              {/foreach}        
-
             </div>
             
           </div>
