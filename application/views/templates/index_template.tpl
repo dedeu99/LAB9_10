@@ -187,31 +187,8 @@
 
 
 
-              <div class="row shadow justify-content-end" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
-          <div class="col-sm-3text-center"  >
-            <br>
-            <a>
-              <span class="rounded-circle">
-                <img
-
-                {if file_exists("img/user{$reply.user_id}.jpg")} 
-                {assign "imgpath" "img/user{$reply.user_id}.jpg"} 
-                
-                  src="{$base_url}{$imgpath}"
-                {else} 
-                  src="{$base_url}img/user.jpg" 
-                {/if}
-
-
-                style="width:40px;" alt="User Image">
-              </span>
-            <p>{$reply.name}</p>
-          </a>
-            <p>Created:</p>
-            <p>{$reply.created_at}</p>
-            <p>Updated:</p>
-            <p>{$reply.updated_at}</p>
-          </div>
+              <div class="row justify-content-end" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
+          
           <div class="col-sm-8">
             {if $id!=0}  
             <div  class="row justify-content-sm-end">
@@ -239,6 +216,30 @@
 
             </div>
             
+          </div>
+          <div class="col-sm-3 text-center"  >
+            <br>
+            <a>
+              <span class="rounded-circle">
+                <img
+
+                {if file_exists("img/user{$reply.user_id}.jpg")} 
+                {assign "imgpath" "img/user{$reply.user_id}.jpg"} 
+                
+                  src="{$base_url}{$imgpath}"
+                {else} 
+                  src="{$base_url}img/user.jpg" 
+                {/if}
+
+
+                style="width:40px;" alt="User Image">
+              </span>
+            <p>{$reply.name}</p>
+          </a>
+            <p>Created:</p>
+            <p>{$reply.created_at}</p>
+            <p>Updated:</p>
+            <p>{$reply.updated_at}</p>
           </div>
         </div>
 
