@@ -14,8 +14,8 @@ class Blog_model extends CI_Model {
 		$arr=$query->result_array();
 		for($i=0;$i<count($arr);++$i){
 			$arr[$i]['replies']=$this->get_replies($arr[$i]['id']);
-			var_dump($arr[$i]);
-			echo(PHP_EOL);
+			//var_dump($arr[$i]);
+			//echo(PHP_EOL);
 		}
 		return $arr;	
 	}
