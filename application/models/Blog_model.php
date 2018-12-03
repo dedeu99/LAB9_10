@@ -12,8 +12,8 @@ class Blog_model extends CI_Model {
 
 		$query = $this->db->query($query_RAW);
 		$arr=$query->result_array();
-		for(int i=0;i<len($arr);++i)
-			echo($arr[i]);
+		for($i=0;$i<len($arr);++$i)
+			echo($arr[$i]);
 		return $arr;	
 	}
 	public function register_user($name,$email,$password){
