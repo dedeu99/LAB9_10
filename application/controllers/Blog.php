@@ -45,7 +45,7 @@
 				}
 							
 			$data['base_url'] = base_url();
-//		    $data['blogs'] = $this->blog_model->get_posts();
+		    $data['blogs'] = $this->blog_model->get_posts();
 		    
 		    /*$data['link1']=site_url("blog/index");
 		    $data['link2']=site_url()."/blog/login";
