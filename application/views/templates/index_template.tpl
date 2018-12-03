@@ -172,6 +172,14 @@
 
 
 
+
+            </div>
+            
+          </div>
+        </div>
+
+
+
               {foreach $blog.replies as $reply}
 
 
@@ -257,10 +265,12 @@
 
               {/foreach}        
 
-            </div>
-            
-          </div>
-        </div>
+
+
+
+
+
+        
       {/foreach}
       </div>
 
