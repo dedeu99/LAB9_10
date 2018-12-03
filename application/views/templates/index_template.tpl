@@ -150,12 +150,7 @@
             {if $id!=0}  
             <div  class="row justify-content-sm-end">
               <a href="{$base_url}index.php/blog/post/{$blog.id}"><button  class="btn btn-secondary">
-                {if $id==$blog.user_id}
-                Update
-                {else}
-                Reply
-                {/if}
-                }
+                UPDATE
               </button></a>
             </div>
             {/if}
