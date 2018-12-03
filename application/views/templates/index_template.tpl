@@ -189,26 +189,8 @@
 
               <div class="row justify-content-end" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
           
-          <div class="col-sm-8">
-            {if $id!=0}  
-            <div  class="row justify-content-sm-end">
-              
-
-              
-              <a href="{$base_url}index.php/blog/post/{$reply.id}"><button  class="btn btn-secondary">
-                {if $id==$reply.user_id}
-                Update
-                {else}
-                Reply
-                {/if}
-              </button></a>
-            </div>
-
-
-
-
-
-            {/if}
+          <div class="col-sm-9">
+            
             <div class="row align-items-center">
               <p>{nl2br($reply.content)}</p>
 
@@ -237,7 +219,7 @@
             <p>{$reply.name}</p>
           </a>
             <p>Replied:</p>
-            <p>{$reply.created_at}</p>>
+            <p>{$reply.created_at}</p>
           </div>
         </div>
 
