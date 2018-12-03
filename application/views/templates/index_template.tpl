@@ -166,7 +166,7 @@
 
 
             {/if}
-            <div class="row align-items-center">
+            <div class="row my-auto">
               <p>{nl2br($blog.content)}</p>
 
 
