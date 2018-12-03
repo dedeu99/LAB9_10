@@ -187,7 +187,7 @@
 
 
 
-              <div class="row justify-content-end" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
+              <div class="row shadow justify-content-end" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
           <div class="col-sm-3text-center"  >
             <br>
             <a>
