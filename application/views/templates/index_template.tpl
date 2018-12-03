@@ -188,7 +188,7 @@
 
 
               <div class="row justify-content-end" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
-          <div class="col-sm-3"  >
+          <div class="col-sm-3 .offset-sm-9 text-center"  >
             <br>
             <a>
               <span class="rounded-circle">
