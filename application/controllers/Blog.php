@@ -184,7 +184,7 @@
 					if($post['user_id']!=$this->session->userId){
 	               		/*$data['message']="You can only edit your own posts";
 	               		$this->smarty->view('application/views/templates/message_template.tpl', $data);*/
-	               		$blog_model->new_reply($blog_id);
+	               		//$blog_model->new_reply($blog_id);
 	               		return;	
 					}else{
 						$data['content']=$post['content'];

@@ -147,16 +147,23 @@
             <p>{$blog.updated_at}</p>
           </div>
           <div class="col-sm-9">
-            {if $id!=0}  
+            {if $id!=0 and $id==$blog.user_id}  
             <div  class="row justify-content-sm-end">
+              
+
+              
               <a href="{$base_url}index.php/blog/post/{$blog.id}"><button  class="btn btn-secondary">
-                UPDATE
+                Update
               </button></a>
             </div>
+
+
+
+
+
             {/if}
             <div class="row align-items-center">
               <p>{nl2br($blog.content)}</p>
-
             </div>
             
           </div>

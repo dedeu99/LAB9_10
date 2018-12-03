@@ -11,8 +11,7 @@ class Blog_model extends CI_Model {
 		"SELECT microposts.id, content, user_id,microposts.created_at,microposts.updated_at,name FROM microposts join users on user_id=users.id ORDER BY created_at DESC";
 
 		$query = $this->db->query($query_RAW);
-		
-		return $query->result_array();
+		return $query->result_array();	
 	}
 	public function register_user($name,$email,$password){
 		$query_RAW = "INSERT INTO users (name,email,created_at,updated_at,password_digest,remember_digest,admin) VALUES ('$name','$email',NOW(),NOW(),'$password',NULL,0)";
@@ -95,7 +94,6 @@ VALUES (value1, value2, value3, ...);*/
 		
 	}
 
-
-
+	
 }
 ?>
