@@ -111,9 +111,13 @@ VALUES (value1, value2, value3, ...);*/
 	}
 	public function get_replies($id)
 	{
-		$sql="select * from replies where replies.micropost_id=$id order by replies.created_at desc";
+		$sql="SELECT replies.id,content,user_id,micropost_id,replies.created_at,name FROM replies JOIN users ON users.user_id=replies.user_id WHERE replies.micropost_id=$id ORDER BY replies.created_at DESC";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
+
+
+/*
+	"SELECT microposts.id, content, user_id,microposts.created_at,microposts.updated_at,name FROM microposts join users on user_id=users.id ORDER BY created_at DESC";*/
 }
 ?>

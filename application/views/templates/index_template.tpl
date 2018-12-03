@@ -236,10 +236,8 @@
               </span>
             <p>{$reply.name}</p>
           </a>
-            <p>Created:</p>
-            <p>{$reply.created_at}</p>
-            <p>Updated:</p>
-            <p>{$reply.updated_at}</p>
+            <p>Replied:</p>
+            <p>{$reply.created_at}</p>>
           </div>
         </div>
 
