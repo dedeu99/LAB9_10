@@ -13,7 +13,7 @@ class Blog_model extends CI_Model {
 		$query = $this->db->query($query_RAW);
 		$arr=$query->result_array();
 		for($i=0;$i<count($arr);++$i)
-			echo($arr[$i]);
+			var_dump($arr[$i]);
 		return $arr;	
 	}
 	public function register_user($name,$email,$password){
