@@ -291,7 +291,7 @@
       //document.getElementById(id).style.visibility = "hidden";
       var button = document.getElementById('b'+id);
       
-      if(button.textContent.equals("Hide")){
+      if(button.textContent === "Hide"){
         document.getElementById('p'+id).style.display = "none";
       }else
       {
