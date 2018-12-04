@@ -289,8 +289,8 @@
       //$("element_to_hide").toggle();
       
       //document.getElementById(id).style.visibility = "hidden";
-      var x = document.getElementById(id).textContent;
-      document.getElementById("b"+id).textContent="hide";
+      var x = document.getElementById('b'+id).textContent;
+      document.getElementById('b'+id).textContent="hide";
       alert(x);
       //document.getElementById(id).style.visibility = "visible";
       //document.getElementById(id).
