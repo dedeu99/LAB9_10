@@ -259,24 +259,18 @@
 			$this->form_validation->set_rules('message', 'Message', 'required', array('required' => 'You must provide a %s.' ));
 			if ($this->form_validation->run() === FALSE)
 			{
-				$data['postType']=set_value('postType');
+				$data['postType']=!$blog_id?"NEW POST":($this->session->userId == $tupple['user_id']?"UPDATE POST":"NEW REPLY");
 				$this->smarty->view('blog_template.tpl', $data);
 			}else{
 				if($blog_id and ($this->session->userId == $tupple['user_id']) )
-				{
-					$data['postType']=set_value("UPDATE POST");
 					$this->blog_model->update_blog($blog_id);
-				}
-				else if ($blog_id and ($this->session->userId != $user_id) )
-				{
-					$data['postType']=set_value('NEW REPLY');
-					$this->blog_model->new_reply($blog_id);
-				}
-				else
-				{
-					$data['postType']=set_value('NEW POST');
-					$this->blog_model->new_blog();
-				}
+				
+				else 
+					if ($blog_id and ($this->session->userId != $user_id) )
+						$this->blog_model->new_reply($blog_id);
+					else
+						$this->blog_model->new_blog();
+				
 				redirect('/blog');
 			} 
 		}
