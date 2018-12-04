@@ -196,7 +196,7 @@
             <hr style="width:100%">
           <div class="col-sm-9">
             
-            <div class="row no-gutters align-items-center">
+            <div class="row no-gutters align-items-center" style:"margin-left:30px">
               <p>{nl2br($reply.content)}</p>
 
 
