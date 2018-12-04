@@ -236,7 +236,7 @@
 
 
       if(replies[id]==null){
-        $.get("{$base_url}index.php/blog/replies/4", function(data,status){
+        $.get("{$base_url}index.php/blog/replies/"+id, function(data,status){
         //alert("P: " + 'p'+id +"Data: " + data + "\nStatus: " + status);
         replies[id]=data;
         });
