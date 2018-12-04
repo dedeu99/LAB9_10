@@ -220,7 +220,7 @@
   <script>
     function myToggle(id) {
 //$("element_to_hide").toggle();
-
+jQuery.noConflict();
 //document.getElementById(id).style.visibility = "hidden";
 var button = document.getElementById('b'+id);
 
