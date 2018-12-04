@@ -121,6 +121,7 @@
 
 
 {foreach $blogs as $blog}
+        <div style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
         <div class="row" >
           <div class="col-sm-3 text-center my-auto"  >
             <br>
@@ -257,7 +258,7 @@
 
 
       {/foreach}
-      </div>
+      </div></div>
 
 
        <nav>
