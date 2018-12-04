@@ -185,10 +185,6 @@
 
       </div>
       <div id="p{$blog.id}" style="display:none;" class="row no-gutters">
-
-
-
-
       </div>
       {/foreach}
     </div>
@@ -233,6 +229,12 @@ if(button.textContent === "Hide"){
   button.textContent="Hide";
   document.getElementById('p'+id).style.display = "";
 }
+
+var p = document.createElement("post"+id);
+p.src = {$base_url}"index.php/blog/replies/4";
+
+alert(p);
+
 
 //document.getElementById('b'+id).textContent="hide";
 //alert(x);
