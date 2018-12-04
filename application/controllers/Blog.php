@@ -265,7 +265,7 @@
 				{
 					$this->blog_model->update_blog($blog_id);
 				}
-				elseif ($blog_id and ($this->session->userId != $user_id) )
+				else if ($blog_id and ($this->session->userId != $user_id) )
 				{
 					 new_reply($blog_id);
 				}
