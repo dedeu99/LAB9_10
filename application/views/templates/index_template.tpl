@@ -191,7 +191,7 @@
 
 
 
-              <div id="p{$blog.id}" hidden class="row justify-content-end" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
+              <div id="p{$blog.id}" style="display:none;" class="row justify-content-end" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
           
           <div class="col-sm-9">
             
@@ -293,7 +293,7 @@
       document.getElementById('b'+id).textContent="hide";
       //alert(x);
       //document.getElementById('p'+id).style.visibility = "visible";
-      document.getElementById('p'+id).removeAttribute("hidden");
+      //document.getElementById('p'+id).removeAttribute("hidden");
       //document.getElementById(id).
 
     }
