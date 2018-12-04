@@ -161,7 +161,7 @@
               </button></a>
 
               {if $blog.numReplies>0}
-              <button class="btn btn-secondary" id="b{$blog.id}" onclick="myToggle('b{$blog.id}')">Show</button> 
+              <button class="btn btn-secondary" id="b{$blog.id}" onclick="myToggle('{$blog.id}')">Show</button> 
               {/if}
             </div>
 
@@ -191,7 +191,7 @@
 
 
 
-              <div class="row justify-content-end" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
+              <div id="p{$blog.id}"class="row justify-content-end" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
           
           <div class="col-sm-9">
             
@@ -290,7 +290,7 @@
       
       //document.getElementById(id).style.visibility = "hidden";
       var x = document.getElementById(id).textContent;
-      document.getElementById(id).textContent="hide";
+      document.getElementById("b"+id).textContent="hide";
       alert(x);
       //document.getElementById(id).style.visibility = "visible";
       //document.getElementById(id).
