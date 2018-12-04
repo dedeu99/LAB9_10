@@ -236,8 +236,8 @@ if(button.textContent === "Hide"){
 
 
 $.get("{$base_url}index.php/blog/replies/4", function(data,status){
-   alert("P: " + 'p'+id +"Data: " + data + "\nStatus: " + status);  
-//$( '#p'+id ).html( data );
+   //alert("P: " + 'p'+id +"Data: " + data + "\nStatus: " + status);  
+$( '#p'+id ).html( data );
 });
 
 
