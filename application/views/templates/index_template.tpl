@@ -148,7 +148,7 @@
           </div>
           <div class="col-sm-9">
             {if $id!=0}  
-            <div  class="row h-25 justify-content-sm-end">
+            <div  class="row justify-content-sm-end">
               
 
               
