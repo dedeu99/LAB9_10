@@ -236,8 +236,12 @@ if(button.textContent === "Hide"){
 
 
 $.get("{$base_url}index.php/blog/replies/4", function(data,status){
-  console.log(data);
+  
+$( 'p'+id ).append( data );
 });
+
+
+
 /*
 var p = document.createElement("div");
 p.src = "{$base_url}index.php/blog/replies/4";
