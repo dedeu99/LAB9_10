@@ -182,7 +182,7 @@
 
           </div>
         </div>
-        
+
       <div id="p{$blog.id}"  class="row no-gutters">
       </div>
       </div>
@@ -219,43 +219,45 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script>
     function myToggle(id) {
-//$("element_to_hide").toggle();
+      //$("element_to_hide").toggle();
 
-//document.getElementById(id).style.visibility = "hidden";
-var button = document.getElementById('b'+id);
+      //document.getElementById(id).style.visibility = "hidden";
+      var button = document.getElementById('b'+id);
 
-if(button.textContent === "Hide"){
-  button.textContent="Show";
-  document.getElementById('p'+id).style.display = "none";
-}else
-{
-  button.textContent="Hide";
-  document.getElementById('p'+id).style.display = "";
-}
-
-
-
-$.get("{$base_url}index.php/blog/replies/4", function(data,status){
-   //alert("P: " + 'p'+id +"Data: " + data + "\nStatus: " + status);  
-$( '#p'+id ).html( data );
-});
+      if(button.textContent === "Hide"){
+        button.textContent="Show";
+        document.getElementById('p'+id).style.display = "none";
+      }else
+      {
+        button.textContent="Hide";
+        document.getElementById('p'+id).style.display = "";
+      }
 
 
 
-/*
-var p = document.createElement("div");
-p.src = "{$base_url}index.php/blog/replies/4";
-document.getElementById("p"+id).appendChild(p);
-*/
+      $.get("{$base_url}index.php/blog/replies/4", function(data,status){
+         //alert("P: " + 'p'+id +"Data: " + data + "\nStatus: " + status);  
+      $( '#p'+id ).html( data );
+      });
 
-//document.getElementById('b'+id).textContent="hide";
-//alert(x);
 
-//document.getElementById('p'+id).style.display = "";
-//document.getElementById('p'+id).removeAttribute("hidden");
-//document.getElementById(id).
 
-}
+      /*
+      var p = document.createElement("div");
+      p.src = "{$base_url}index.php/blog/replies/4";
+      document.getElementById("p"+id).appendChild(p);
+      */
+
+      //document.getElementById('b'+id).textContent="hide";
+      //alert(x);
+
+      //document.getElementById('p'+id).style.display = "";
+      //document.getElementById('p'+id).removeAttribute("hidden");
+      //document.getElementById(id).
+    }
+    $(".btn").mousedown(function(e){
+      e.preventDefault();
+    });
 </script>
 </body>
 
