@@ -289,11 +289,20 @@
       //$("element_to_hide").toggle();
       
       //document.getElementById(id).style.visibility = "hidden";
-      var x = document.getElementById('b'+id).textContent;
-      document.getElementById('b'+id).textContent="hide";
+      var button = document.getElementById('b'+id);
+      
+      if(button.textContent.equals("Hide")){
+        document.getElementById('p'+id).style.display = "none";
+      }else
+      {
+        b.textContent="Show";
+        document.getElementById('p'+id).style.display = "";
+      }
+
+      //document.getElementById('b'+id).textContent="hide";
       //alert(x);
 
-      document.getElementById('p'+id).style.display = "";
+      //document.getElementById('p'+id).style.display = "";
       //document.getElementById('p'+id).removeAttribute("hidden");
       //document.getElementById(id).
 
