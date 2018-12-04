@@ -234,10 +234,11 @@
       if(replies[id]==null){
         $.get("{$base_url}index.php/blog/replies/"+id, function(data,status){
         //alert("P: " + 'p'+id +"Data: " + data + "\nStatus: " + status);
-        replies[id]=data;
+          replies[id]=data;
+          $( '#p'+id ).html( replies[id] );
         });
         //console.log('inside if');
-        $( '#p'+id ).html( replies[id] );
+        
       }else
         $( '#p'+id ).html( replies[id] );
     }
