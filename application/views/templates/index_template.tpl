@@ -256,9 +256,9 @@
 
 
 
-
+              </div>
       {/foreach}
-      </div></div>
+      </div>
 
 
        <nav>
