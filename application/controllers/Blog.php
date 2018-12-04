@@ -337,7 +337,7 @@
 		}
 		public function replies($id)
 		{
-			$data['replies'] = this->blog_model->get_replies($id));
+			$data['replies'] = this->blog_model->get_replies($id);
 			$this->smarty->view( 'replies_template.tpl', $data );
 		} 	
 	}
