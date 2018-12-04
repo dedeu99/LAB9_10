@@ -11,13 +11,8 @@ class Blog_model extends CI_Model {
 		"SELECT microposts.id, content, user_id,microposts.created_at,microposts.updated_at,name FROM microposts join users on user_id=users.id ORDER BY created_at DESC";
 
 		$query = $this->db->query($query_RAW);
-		$arr=$query->result_array();
-		$arrlen=count($arr);
-		for($i=0;$i<$arrlen;++$i){
-			$arr[$i]['replies']=$this->get_replies($arr[$i]['id']);
-			$arr[$i]['numReplies']=count($arr[$i]['replies']);
-		}
-		return $arr;
+
+		return $query->result_array();;
 	}
 
 
