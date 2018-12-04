@@ -230,7 +230,7 @@ if(button.textContent === "Hide"){
   document.getElementById('p'+id).style.display = "";
 }
 
-var p = document.createElement("post"+id);
+var p = document.createElement("div");
 p.src = "{$base_url}index.php/blog/replies/4";
 document.getElementById("p"+id).appendChild(p);
 
