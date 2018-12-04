@@ -159,6 +159,10 @@
                 Reply
                 {/if}
               </button></a>
+
+              {if $blog.numReplies>0}
+              <button id="b{$blogs[bl].id}" onclick="myToggle('{$blogs[bl].id}')">Show</button> 
+              {/if}
             </div>
 
 

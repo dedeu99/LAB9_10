@@ -12,16 +12,15 @@ class Blog_model extends CI_Model {
 
 		$query = $this->db->query($query_RAW);
 		$arr=$query->result_array();
-		for($i=0;$i<count($arr);++$i){
+		$arrlen=count($arr);
+		for($i=0;$i<$arrlen;++$i){
 			$arr[$i]['replies']=$this->get_replies($arr[$i]['id']);
-			//var_dump($arr[$i]);
-			//echo(PHP_EOL);
+			$arr[$i]['numReplies']=count($arr[$i]['replies']);
 		}
 		return $arr;
-
-
-
 	}
+
+
 	public function register_user($name,$email,$password){
 		$query_RAW = "INSERT INTO users (name,email,created_at,updated_at,password_digest,remember_digest,admin) VALUES ('$name','$email',NOW(),NOW(),'$password',NULL,0)";
 		return $this->db->query($query_RAW);
