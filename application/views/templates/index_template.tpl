@@ -230,10 +230,16 @@ if(button.textContent === "Hide"){
   document.getElementById('p'+id).style.display = "";
 }
 
+
+
+$.get("{$base_url}index.php/blog/replies/4", function(data,status){
+  console.log('${data}');
+});
+/*
 var p = document.createElement("div");
 p.src = "{$base_url}index.php/blog/replies/4";
 document.getElementById("p"+id).appendChild(p);
-
+*/
 
 //document.getElementById('b'+id).textContent="hide";
 //alert(x);
