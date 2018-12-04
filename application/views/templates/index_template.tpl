@@ -92,8 +92,8 @@
         </div>
       </div>
     <br>
-      <div class="shadow pr-3 pl-3" style="padding:0px">
-        <div class="row align-items-center" style="padding:0px;">
+      <div class="shadow">
+        <div class="row no-gutters align-items-center">
           <div class="col-sm-12 text-center bg-dark">
             <ul class="justify-content-sm-end nav navbar-dark ">
                 
@@ -122,7 +122,7 @@
 
 {foreach $blogs as $blog}
         <div style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
-        <div class="row" >
+        <div class="row no-gutters" >
           <div class="col-sm-3 text-center my-auto"  >
             <br>
             <a>
@@ -149,7 +149,7 @@
           </div>
           <div class="col-sm-9">
             {if $id!=0}  
-            <div  class="row justify-content-sm-end">
+            <div  class="row no-gutters justify-content-sm-end">
               
 
               
@@ -171,7 +171,7 @@
 
 
             {/if}
-            <div class="row">
+            <div class="row no-gutters">
               <p>{nl2br($blog.content)}</p>
 
 
