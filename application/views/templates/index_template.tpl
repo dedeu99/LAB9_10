@@ -295,7 +295,7 @@
         document.getElementById('p'+id).style.display = "none";
       }else
       {
-        button.textContent="Show";
+        button.textContent="Hide";
         document.getElementById('p'+id).style.display = "";
       }
 
