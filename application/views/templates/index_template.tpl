@@ -191,9 +191,9 @@
 
 
 
-              <hr>
+
               <div id="p{$blog.id}" style="display:none;" class="row no-gutters" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
-          
+            <hr>
           <div class="col-sm-9">
             
             <div class="row no-gutters align-items-center">
