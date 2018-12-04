@@ -291,7 +291,7 @@
       //document.getElementById(id).style.visibility = "hidden";
       var x = document.getElementById('b'+id).textContent;
       document.getElementById('b'+id).textContent="hide";
-      alert(x);
+      //alert(x);
       document.getElementById('p'+id).style.visibility = "visible";
       //document.getElementById(id).
 
