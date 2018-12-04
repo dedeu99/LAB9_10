@@ -267,7 +267,7 @@
 				}
 				elseif ($blog_id and ($this->session->userId != $user_id) )
 				{
-					 new_reply($blog_id)
+					 new_reply($blog_id);
 				}
 				else
 				{
