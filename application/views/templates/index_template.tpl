@@ -240,7 +240,7 @@
         //alert("P: " + 'p'+id +"Data: " + data + "\nStatus: " + status);
         replies[id]=data;
         });
-        console.log("inside if");
+        console.log('inside if');
       }
       $( '#p'+id ).html( replies[id] );
 
