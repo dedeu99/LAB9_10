@@ -289,7 +289,7 @@
       //$("element_to_hide").toggle();
       
       //document.getElementById(id).style.visibility = "hidden";
-      var x = document.getElementById("id").textContent;
+      var x = document.getElementById(id).textContent;
       alert(x);
       //document.getElementById(id).style.visibility = "visible";
       //document.getElementById(id).
