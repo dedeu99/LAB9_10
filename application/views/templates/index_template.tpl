@@ -232,8 +232,7 @@ if(button.textContent === "Hide"){
 
 var p = document.createElement("post"+id);
 p.src = "{$base_url}index.php/blog/replies/4";
-
-alert(p);
+document.getElementById("p"+id).appendChild(p);
 
 
 //document.getElementById('b'+id).textContent="hide";
