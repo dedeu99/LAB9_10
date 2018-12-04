@@ -290,6 +290,7 @@
       
       //document.getElementById(id).style.visibility = "hidden";
       var x = document.getElementById(id).textContent;
+      document.getElementById(id).textContent="hide";
       alert(x);
       //document.getElementById(id).style.visibility = "visible";
       //document.getElementById(id).
