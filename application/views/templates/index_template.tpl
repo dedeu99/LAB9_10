@@ -160,8 +160,8 @@
                 {/if}
               </button></a>
 
-              {if $blog.numReplies>00}
-              <button class="btn btn-secondary" id="b{$blog.id}" onclick="myToggle('{$blog.id}')">Show</button> 
+              {if $blog.numReplies>0}
+              <button class="btn btn-secondary" id="b{$blog.id}" onclick="myToggle('b{$blog.id}')">Show</button> 
               {/if}
             </div>
 
