@@ -260,6 +260,7 @@
 			if ($this->form_validation->run() === FALSE)
 			{
 				$data['postType']=!$blog_id?"NEW POST":($this->session->userId == $tupple['user_id']?"UPDATE POST":"NEW REPLY");
+				$data['action']=$blog_id?$blog_id:"";
 				$this->smarty->view('blog_template.tpl', $data);
 			}else{
 				if($blog_id and ($this->session->userId == $tupple['user_id']) )
