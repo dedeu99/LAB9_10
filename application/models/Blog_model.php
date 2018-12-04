@@ -40,7 +40,7 @@ class Blog_model extends CI_Model {
 			return NULL;	
 	}
 
-	public function getpost($postid){
+	public function get_blog($postid){
 		$query_RAW = "SELECT * FROM microposts WHERE id = '$postid'";
 		$query = $this->db->query($query_RAW);
 		$arr=$query->result_array();
