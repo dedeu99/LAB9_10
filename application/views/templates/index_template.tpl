@@ -121,7 +121,7 @@
 
 
 {foreach $blogs as $blog}
-        <div style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
+        <div style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.5  )">
         <div class="row no-gutters" >
           <div class="col-sm-3 text-center my-auto"  >
             <br>
