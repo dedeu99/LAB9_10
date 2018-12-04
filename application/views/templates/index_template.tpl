@@ -161,9 +161,9 @@
                 {/if}
               </button></a>
 
-              {if $blog.numReplies>0}
+              
               <button class="btn btn-secondary" id="b{$blog.id}" onclick="myToggle('{$blog.id}')">Show</button> 
-              {/if}
+              
             </div>
 
 
@@ -184,7 +184,7 @@
         </div>
 
       </div>
-      <div id="p{$blog.id}" <!-- style="display:none;" --> class="row no-gutters">
+      <div id="p{$blog.id}"  class="row no-gutters">
       </div>
       {/foreach}
     </div>
