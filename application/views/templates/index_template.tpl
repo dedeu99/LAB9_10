@@ -292,6 +292,7 @@
       var button = document.getElementById('b'+id);
       
       if(button.textContent === "Hide"){
+        button.textContent="Show";
         document.getElementById('p'+id).style.display = "none";
       }else
       {
