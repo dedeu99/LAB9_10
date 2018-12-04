@@ -184,7 +184,7 @@
         </div>
 
       </div>
-      <div id="p{$blog.id}" style="display:none;" class="row no-gutters">
+      <div id="p{$blog.id}" <!-- style="display:none;" --> class="row no-gutters">
       </div>
       {/foreach}
     </div>
