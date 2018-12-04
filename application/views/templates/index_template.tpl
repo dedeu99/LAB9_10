@@ -220,7 +220,7 @@
   <script>
     function myToggle(id) {
 //$("element_to_hide").toggle();
-jQuery.noConflict();
+
 //document.getElementById(id).style.visibility = "hidden";
 var button = document.getElementById('b'+id);
 
@@ -236,8 +236,8 @@ if(button.textContent === "Hide"){
 
 
 $.get("{$base_url}index.php/blog/replies/4", function(data,status){
-  console.log('p'+id );
-$( 'p'+id ).append( `${data}` );
+   alert("Data: " + data + "\nStatus: " + status);
+$( 'p'+id ).append( data );
 });
 
 
