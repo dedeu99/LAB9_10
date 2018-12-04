@@ -293,7 +293,7 @@
       document.getElementById('b'+id).textContent="hide";
       //alert(x);
       //document.getElementById('p'+id).style.visibility = "visible";
-      $('p'+id).show();
+      $('p'+id).removeAttribute("hidden");
       //document.getElementById(id).
 
     }
