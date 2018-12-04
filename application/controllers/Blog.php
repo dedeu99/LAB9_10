@@ -262,7 +262,7 @@
 				$data['postType']=set_value('postType');
 				$this->smarty->view('blog_template.tpl', $data);
 			}else{
-				if ($blog_id and ($this->session->userId == $user_id) )
+				if($blog_id and ($this->session->userId == $tupple['user_id']) )
 				{
 					$data['postType']=set_value("UPDATE POST");
 					$this->blog_model->update_blog($blog_id);
