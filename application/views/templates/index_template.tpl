@@ -292,7 +292,8 @@
       var x = document.getElementById('b'+id).textContent;
       document.getElementById('b'+id).textContent="hide";
       //alert(x);
-      document.getElementById('p'+id).style.visibility = "visible";
+      //document.getElementById('p'+id).style.visibility = "visible";
+      $('p'+id).toggle();
       //document.getElementById(id).
 
     }
