@@ -160,8 +160,8 @@
                 {/if}
               </button></a>
 
-              {if $blog.numReplies>0}
-              <button id="b{$blogs[bl].id}" onclick="myToggle('{$blogs[bl].id}')">Show</button> 
+              {if $blog.numReplies>00}
+              <button class="btn btn-secondary" id="b{$blog.id}" onclick="myToggle('{$blog.id}')">Show</button> 
               {/if}
             </div>
 
@@ -284,6 +284,18 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+    function myToggle(id) {
+      //$("element_to_hide").toggle();
+      
+      //document.getElementById(id).style.visibility = "hidden";
+      var x = document.getElementById("myBtn").textContent;
+      alert(x);
+      //document.getElementById(id).style.visibility = "visible";
+      //document.getElementById(id).
+
+    }
+ </script>
   </body>
 
 
