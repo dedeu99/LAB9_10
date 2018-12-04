@@ -191,7 +191,7 @@
 
 
 
-              <div id="p{$blog.id}" style="display:none;" class="row justify-content-end" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
+              <div id="p{$blog.id}" style="display:none;" class="row" style="border-width: 0px thin thin ;border-style: solid;border-color:rgba(0,0,0,0.2)">
           
           <div class="col-sm-9">
             
