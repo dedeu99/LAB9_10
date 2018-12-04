@@ -220,9 +220,6 @@
   <script>
     var replies = [];
     function myToggle(id) {
-      //$("element_to_hide").toggle();
-
-      //document.getElementById(id).style.visibility = "hidden";
       var button = document.getElementById('b'+id);
 
       if(button.textContent === "Hide"){
@@ -234,29 +231,15 @@
         document.getElementById('p'+id).style.display = "";
       }
 
-
       if(replies[id]==null){
         $.get("{$base_url}index.php/blog/replies/"+id, function(data,status){
         //alert("P: " + 'p'+id +"Data: " + data + "\nStatus: " + status);
         replies[id]=data;
         });
-        console.log('inside if');
-      }
-      $( '#p'+id ).html( replies[id] );
-
-
-      /*
-      var p = document.createElement("div");
-      p.src = "{$base_url}index.php/blog/replies/4";
-      document.getElementById("p"+id).appendChild(p);
-      */
-
-      //document.getElementById('b'+id).textContent="hide";
-      //alert(x);
-
-      //document.getElementById('p'+id).style.display = "";
-      //document.getElementById('p'+id).removeAttribute("hidden");
-      //document.getElementById(id).
+        //console.log('inside if');
+        $( '#p'+id ).html( replies[id] );
+      }else
+        $( '#p'+id ).html( replies[id] );
     }
     $(".btn").mousedown(function(e){
       e.preventDefault();
