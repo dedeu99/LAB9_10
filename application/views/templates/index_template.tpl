@@ -183,7 +183,7 @@
           </div>
         </div>
 
-
+<div id="p{$blog.id}" style="display:none;" class="row no-gutters">
 
               {foreach $blog.replies as $reply}
 
@@ -192,7 +192,7 @@
 
 
 
-              <div id="p{$blog.id}" style="display:none;" class="row no-gutters">
+              
             <hr style="width:100%">
           <div class="col-sm-9">
             
@@ -226,7 +226,7 @@
             <p>Replied:</p>
             <p>{$reply.created_at}</p>
           </div>
-        </div>
+        
 
 
 
@@ -250,7 +250,7 @@
 
 
               {/foreach}        
-
+</div>
 
 
 
