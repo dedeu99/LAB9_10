@@ -253,12 +253,15 @@
                		$this->smarty->view('application/views/templates/message_template.tpl', $data);
                		return;
 				}
-				$data['content'] = $tupple['content'];
+				
 			}
 
 			$this->form_validation->set_rules('message', 'Message', 'required', array('required' => 'You must provide a %s.' ));
 			if ($this->form_validation->run() === FALSE)
 			{
+
+
+				$data['content'] = $blog_if&&$this->session->userId == $tupple['user_id']?$tupple['content']:"";
 				$data['postType']=!$blog_id?"NEW POST":($this->session->userId == $tupple['user_id']?"UPDATE POST":"NEW REPLY");
 				$data['action']=$blog_id?$blog_id:"";
 				$this->smarty->view('blog_template.tpl', $data);
