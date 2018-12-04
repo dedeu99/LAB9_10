@@ -170,7 +170,7 @@
 
 
             {/if}
-            <div class="row h-75 align-items-center">
+            <div class="row">
               <p>{nl2br($blog.content)}</p>
 
 
