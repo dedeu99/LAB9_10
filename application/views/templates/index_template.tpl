@@ -182,9 +182,9 @@
 
           </div>
         </div>
-
-      </div>
+        
       <div id="p{$blog.id}"  class="row no-gutters">
+      </div>
       </div>
       {/foreach}
     </div>
