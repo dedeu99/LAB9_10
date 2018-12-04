@@ -253,7 +253,7 @@
                		$this->smarty->view('application/views/templates/message_template.tpl', $data);
                		return;
 				}
-				$data['content'] = $tupple->content;
+				$data['content'] = $tupple['content'];
 			}
 
 			$this->form_validation->set_rules('message', 'Message', 'required', array('required' => 'You must provide a %s.' ));
