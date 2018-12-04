@@ -274,8 +274,8 @@
 					$this->blog_model->new_blog();
 				}
 				redirect('/blog');
-		} 
-
+			} 
+		}
 		public function passwordReset(){
 			if($this->isloggedin())
 				redirect('blog');
