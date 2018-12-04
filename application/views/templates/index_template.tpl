@@ -233,7 +233,7 @@ if(button.textContent === "Hide"){
 
 
 $.get("{$base_url}index.php/blog/replies/4", function(data,status){
-  console.log('${data}');
+  console.log(data);
 });
 /*
 var p = document.createElement("div");
