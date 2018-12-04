@@ -163,7 +163,7 @@
                	} 
             }    
 		}
-		public function post($postid = '')
+		/*public function post($postid = '')
 		{
 			$data['base_url'] = base_url();
 			$data['background']="danger";
@@ -175,6 +175,8 @@
 			}
 			$data['loggedin']=true;
 			$data['username'] = $this->session->user;
+			
+
 			$data['action']="";
 			$data['content']="";
 			if (!empty($postid)) {
@@ -187,8 +189,10 @@
 				{
 					if($post['user_id']!=$this->session->userId){
 	               		/*$data['message']="You can only edit your own posts";
-	               		$this->smarty->view('application/views/templates/message_template.tpl', $data);*/
-	               		//$blog_model->new_reply($blog_id);
+	               		$this->smarty->view('application/views/templates/message_template.tpl', $data);
+	               		
+	               		$blog_model->new_reply($blog_id,$this->session->userId,$post['content']);
+
 	               		return;	
 					}else{
 						$data['content']=$post['content'];
@@ -226,7 +230,52 @@
                	return;
 			}
 			redirect('blog');
-		}
+		}*/
+
+		public function post($blog_id = FALSE)
+		{
+			$data['base_url'] = base_url();
+			$data['background']="danger";
+			$data['loggedin']=false;
+			if(!$this->isloggedin()){
+               	$data['message']="You need to login before posting";
+               	$this->smarty->view('application/views/templates/message_template.tpl', $data);
+               	return;
+			}
+			$data['loggedin']=true;
+			$data['username'] = $this->session->user;
+			
+			if ($blog_id)
+			{
+				$tupple = $this->blog_model->get_blog($blog_id);
+				if(is_null($tupple)){
+               		$data['message']="The selected post does not exist";
+               		$this->smarty->view('application/views/templates/message_template.tpl', $data);
+               		return;
+				}
+				$data['content'] = $tupple->content;
+			}
+
+			$this->form_validation->set_rules('message', 'Message', 'required', array('required' => 'You must provide a %s.' ));
+			if ($this->form_validation->run() === FALSE)
+			{
+				$this->smarty->view('blog_template.tpl', $data);
+			}else{
+				if ($blog_id and ($this->session->userId == $user_id) )
+				{
+					$this->blog_model->update_blog($blog_id);
+				}
+				elseif ($blog_id and ($this->session->userId != $user_id) )
+				{
+				. . .
+				}
+				else
+				{
+					$this->blog_model->new_blog();
+				}
+				redirect('/blog');
+		} 
+
 		public function passwordReset(){
 			if($this->isloggedin())
 				redirect('blog');

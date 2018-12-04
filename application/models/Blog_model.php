@@ -53,7 +53,8 @@ class Blog_model extends CI_Model {
 	/*UPDATE table_name
 SET column1 = value1, column2 = value2, ...
 WHERE condition;*/
-	public function updatepost($postid,$content){
+	public function update_blog($postid){
+		$content=$_POST['message'];
 		$query_RAW = "UPDATE microposts SET content='$content', updated_at=NOW() where id = $postid";
 		return $this->db->query($query_RAW);
 	}
@@ -63,7 +64,9 @@ VALUES (value1, value2, value3, ...);
 
 INSERT INTO table_name
 VALUES (value1, value2, value3, ...);*/
-	public function createpost($content,$userid){
+	public function new_blog(){
+		$content=$_POST['message'];
+		$userid=$this->session->userId;
 		$query_RAW = "INSERT INTO microposts (content,user_id,created_at,updated_at) VALUES ('$content',$userid,NOW(),NOW())";
 		return $this->db->query($query_RAW);
 	}
@@ -99,13 +102,17 @@ VALUES (value1, value2, value3, ...);*/
 
 		$query_RAW = "SELECT * from users WHERE email='$email'";
 		$res= $this->db->query($query_RAW);
-		return $res->result_array();;
+		return $res->result_array();
 		
 	}
 
 	public function new_reply($blog_id)
 	{
-	
+		$content=$_POST['message'];
+		$userid=$this->session->userId;
+		$query_RAW = "INSERT INTO replies (content,user_id,micropost_id,created_at) VALUES ('$content',$userid,$blog_id,NOW())";
+		return $this->db->query($query_RAW);
+	}	
 	
 	
 	}

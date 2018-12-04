@@ -50,11 +50,11 @@
  
     <br>
     <div class="container shadow ">
-      <form action="{$base_url}index.php/blog/updatepost{$action}" method="post">
+      <form action="{$base_url}index.php/blog/post{$action}" method="post">
         <div class="form-group text-center">
           <div class="row justify-content-center align-items-center">  
             <div class="col-sm-8">
-              <h1>NEW POST</h1>
+              <h1>{$postType}</h1>
             
               <div class="form-group">
                 <label for="namefield"><sub>Message:</sub></label>
