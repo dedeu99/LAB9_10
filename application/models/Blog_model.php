@@ -8,11 +8,25 @@ class Blog_model extends CI_Model {
 	{
 		$query_RAW = //"SELECT * FROM microposts ORDER BY created_at DESC";
 
-		"SELECT microposts.id, content, user_id,microposts.created_at,microposts.updated_at,name FROM microposts join users on user_id=users.id ORDER BY created_at DESC";
+		"SELECT microposts.id, content, user_id, microposts.created_at, microposts.updated_at, name, COALESCE( contadores.replies, 0 ) as numReplies 
+		FROM microposts
+		LEFT JOIN (
+		
+
+			(
+			SELECT micropost_id, COUNT( id ) AS replies
+			FROM replies
+			GROUP BY micropost_id
+			) AS contadores
+
+			
+		) ON microposts.id = contadores.micropost_id
+		JOIN users ON user_id = users.id
+		ORDER BY created_at DESC";
 
 		$query = $this->db->query($query_RAW);
 
-		return $query->result_array();;
+		return $query->result_array();
 	}
 
 
