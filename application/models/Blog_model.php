@@ -112,7 +112,7 @@ VALUES (value1, value2, value3, ...);*/
 	
 	public function get_replies($id)
 	{
-		$sql="SELECT replies.id,content,user_id,micropost_id,replies.created_at,name FROM replies JOIN users ON users.id=user_id WHERE replies.micropost_id=$id ORDER BY replies.created_at DESC";
+		$sql="SELECT replies.id,content,user_id,micropost_id,replies.created_at,name FROM replies JOIN users ON users.id=user_id WHERE replies.micropost_id=$id ORDER BY replies.created_at";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
