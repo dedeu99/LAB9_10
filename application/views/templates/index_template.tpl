@@ -160,7 +160,6 @@
                 Reply
                 {/if}
               </button></a>
-              <SCRIPT>console.log("REPLIES:{$blog.numReplies}");</script>
               {if {$blog.numReplies}>0}
                 <button class="btn btn-secondary" id="b{$blog.id}" onclick="myToggle('{$blog.id}')">Show</button> 
               {/if}
