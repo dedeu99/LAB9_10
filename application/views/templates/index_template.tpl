@@ -148,11 +148,11 @@
             <p>{$blog.updated_at}</p>
           </div>
           <div class="col-sm-9">
-            {if $id!=0}  
+              
             <div  class="row no-gutters justify-content-sm-end">
 
 
-
+              {if $id!=0}
               <a href="{$base_url}index.php/blog/post/{$blog.id}"><button  class="btn btn-secondary">
                 {if $id==$blog.user_id}
                 Update
@@ -163,13 +163,14 @@
               {if {$blog.numReplies}>0}
                 <button class="btn btn-secondary" id="b{$blog.id}" onclick="myToggle('{$blog.id}')">Show</button> 
               {/if}
+            {/if}
             </div>
 
 
 
 
 
-            {/if}
+            
             <div class="row no-gutters">
               <p>{nl2br($blog.content)}</p>
 
