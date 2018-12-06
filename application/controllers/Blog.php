@@ -335,8 +335,10 @@
 				}
 			}
 		}
-		public function replies($id)
+		public function replies($id=false)
 		{
+				if(!$id)
+					return "";
 			$data['base_url'] = base_url();
 			$data['replies'] = $this->blog_model->get_replies($id);
 			$this->smarty->view( 'replies_template.tpl', $data );
