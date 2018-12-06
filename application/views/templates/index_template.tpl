@@ -160,10 +160,11 @@
                 Reply
                 {/if}
               </button></a>
+            {/if}
+            
               {if {$blog.numReplies}>0}
                 <button class="btn btn-secondary" id="b{$blog.id}" onclick="myToggle('{$blog.id}')">Show</button> 
               {/if}
-            {/if}
             </div>
 
 
